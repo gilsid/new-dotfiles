@@ -1,5 +1,7 @@
--- Colloid-cursors dir exists but empty (no cursor files)
--- Use default (Adwaita) to avoid crash
+-- Cursor
+hl.env("XCURSOR_THEME", "Colloid-cursors")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Colloid-cursors")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Toolkit backend
