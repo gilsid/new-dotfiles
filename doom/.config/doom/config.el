@@ -1,4 +1,4 @@
-(setq doom-theme 'catppuccin)
+(setq doom-theme 'doom-gruvbox)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 10.0))
 (after! pdf-tools
   (add-hook 'pdf-view-mode-hook
@@ -49,7 +49,7 @@
 (add-hook 'org-mode-hook #'hl-todo-mode)
 
 (custom-theme-set-faces!
-'catppuccin
+'doom-gruvbox
 '(org-level-8 :inherit outline-3 :height 1.0)
 '(org-level-7 :inherit outline-3 :height 1.0)
 '(org-level-6 :inherit outline-3 :height 1.1)
