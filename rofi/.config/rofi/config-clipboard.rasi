@@ -1,0 +1,7 @@
+@import "config.rasi"
+
+configuration {
+    lines:  15;
+    width:  500;
+    padding: 0.5em;
+}

@@ -1,0 +1,27 @@
+/* Rofi config - base */
+/* Theme aktif diimport di sini, ganti baris berikut untuk pindah theme */
+
+@import "themes/gruvbox.rasi"
+
+configuration {
+    modi:                     "drun,run,filebrowser,window";
+    show-icons:               true;
+    icon-theme:               "Papirus";
+    drun-display-format:      "{name}";
+    window-format:            "{w} · {c} · {t}";
+    hover-select:             true;
+    me-select-entry:          "MouseSecondary";
+    me-accept-entry:          "MousePrimary";
+    display-drun:             "󰣆 Apps";
+    display-run:              "󰥩 Run";
+    display-filebrowser:      "󰉋 Files";
+    display-window:           "󰖯 Windows";
+    disable-history:          false;
+    location:                 0;
+    terminal:                 "alacritty";
+    font:                     "JetBrainsMono Nerd Font SemiBold 13";
+}
+
+/* Themes lain:
+   @import "themes/catppuccin.rasi"
+*/

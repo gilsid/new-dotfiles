@@ -1,0 +1,300 @@
+2026-07-09T10:55:22.172327Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12417
+2026-07-09T10:55:22.172418Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-09T10:55:22.273448Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-09T10:58:41.510616Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=14124
+2026-07-09T10:58:41.510668Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-09T10:58:41.735447Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-09T12:26:36.313420Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=14124
+2026-07-09T16:20:38.045435Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=86824
+2026-07-09T16:20:38.045656Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-09T16:20:38.209940Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-09T18:07:38.750455Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=86824
+2026-07-09T23:41:17.700172Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=7373
+2026-07-09T23:41:17.700953Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-09T23:41:17.763694Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-10T00:32:46.128432Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=34527
+2026-07-10T00:32:46.128473Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-10T00:32:46.177451Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-10T02:02:17.628680Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=7373
+2026-07-10T05:42:55.521386Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=188519
+2026-07-10T05:42:55.521487Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-10T05:42:55.651667Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-10T06:51:51.284916Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=188519
+2026-07-11T01:00:29.064885Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=410800
+2026-07-11T01:00:29.064960Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-11T01:00:29.207195Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-11T01:26:01.438295Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=410800
+2026-07-11T01:26:05.372105Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=423665
+2026-07-11T01:26:05.372154Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-11T01:26:05.572764Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-11T01:26:08.192684Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=423665
+2026-07-12T11:38:00.862866Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=11848
+2026-07-12T11:38:00.863871Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-12T11:38:00.899346Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-12T14:27:50.943093Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=11848
+2026-07-12T22:26:45.794710Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=7138
+2026-07-12T22:26:45.856093Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-12T22:26:45.900754Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-12T23:42:45.161233Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=7138
+2026-07-13T01:02:54.271286Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=96187
+2026-07-13T01:02:54.271343Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-13T01:02:54.407296Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-13T06:11:08.910654Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=112929
+2026-07-13T06:11:09.115419Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-13T06:11:09.130959Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-13T13:49:52.979239Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4355
+2026-07-13T13:49:53.007071Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-13T13:49:53.162280Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-13T23:52:05.393550Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=8074
+2026-07-13T23:52:05.425241Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-13T23:52:05.467999Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T01:49:16.310198Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=61861
+2026-07-14T01:49:16.365456Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T01:49:16.570771Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T02:14:32.610295Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=72615
+2026-07-14T02:14:32.631238Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T02:14:32.831772Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T04:11:01.824318Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4024
+2026-07-14T04:11:02.001346Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T04:11:02.992066Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T06:46:32.780028Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=98625
+2026-07-14T06:46:32.790144Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T06:46:32.867263Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T10:12:27.472486Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=5975
+2026-07-14T10:12:27.516483Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T10:12:27.598981Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-14T14:21:18.501355Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4162
+2026-07-14T14:21:18.524905Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-14T14:21:19.192146Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-15T00:36:53.932406Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=55190
+2026-07-15T00:36:53.964768Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-15T00:36:54.054431Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-15T14:16:20.463269Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4245
+2026-07-15T14:16:20.517423Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-15T14:16:21.662028Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-15T19:24:39.981600Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=216610
+2026-07-15T19:24:40.008832Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-15T19:24:40.204621Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T01:26:15.213351Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=7516
+2026-07-16T01:26:15.240775Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T01:26:15.270292Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T01:30:28.221514Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=10268
+2026-07-16T01:30:28.232819Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T01:30:28.455004Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T03:27:28.785072Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=10268
+2026-07-16T03:27:39.568765Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=65097
+2026-07-16T03:27:39.568818Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T03:27:39.631868Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T03:27:47.311072Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=65097
+2026-07-16T03:31:11.437468Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=68197
+2026-07-16T03:31:11.437509Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T03:31:11.674246Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T03:31:17.682963Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=68197
+2026-07-16T03:31:21.332561Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=68314
+2026-07-16T03:31:21.332605Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T03:31:21.471956Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T03:31:27.591454Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=68314
+2026-07-16T03:31:45.060256Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=68547
+2026-07-16T03:31:45.060299Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T03:31:45.194409Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T03:31:50.180385Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=68547
+2026-07-16T03:32:29.011952Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=68906
+2026-07-16T03:32:29.012929Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T03:32:29.151732Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T04:41:43.961693Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=72693
+2026-07-16T04:41:43.961748Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T04:41:43.972604Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T04:41:46.063845Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=72693
+2026-07-16T04:41:47.599760Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=72733
+2026-07-16T04:41:47.600113Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T04:41:47.841741Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T04:43:54.521010Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=72733
+2026-07-16T04:44:17.429688Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=73820
+2026-07-16T04:44:17.429753Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T04:44:17.437144Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T07:44:04.495278Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=16453
+2026-07-16T07:44:04.506824Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T07:44:04.757210Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T09:11:10.357649Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3784
+2026-07-16T09:11:10.381843Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T09:11:10.610431Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T14:21:20.124356Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4109
+2026-07-16T14:21:20.154141Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T14:21:20.345672Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T16:19:20.995607Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=71260
+2026-07-16T16:19:21.010108Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T16:19:21.250440Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-16T23:46:27.540319Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=14335
+2026-07-16T23:46:27.556714Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-16T23:46:27.605305Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-17T04:10:48.448586Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=15844
+2026-07-17T04:10:48.536054Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-17T04:10:48.705595Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-17T10:43:59.531165Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=199977
+2026-07-17T10:43:59.550309Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-17T10:43:59.734894Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-17T13:18:40.233032Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=6540
+2026-07-17T13:18:40.236714Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-17T13:18:40.285235Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-18T04:15:59.798784Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17046
+2026-07-18T04:15:59.892581Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-18T04:16:00.054503Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-18T11:37:03.729640Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=17046
+2026-07-18T14:57:31.935492Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=25580
+2026-07-18T14:57:31.955593Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-18T14:57:31.966833Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-18T14:57:44.631241Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=25580
+2026-07-18T15:15:36.277549Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=33954
+2026-07-18T15:15:36.277632Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-18T15:15:36.283167Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-18T22:48:27.291537Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=8241
+2026-07-18T22:48:28.364384Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-18T22:48:28.570826Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-19T01:50:28.675772Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4803
+2026-07-19T01:50:28.734688Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-19T01:50:28.964290Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-19T07:07:59.682149Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=50694
+2026-07-19T07:07:59.695187Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-19T07:07:59.831041Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-19T11:27:06.895397Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=50694
+2026-07-19T13:55:50.859753Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=20585
+2026-07-19T13:55:50.890598Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-19T13:55:50.923172Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-19T23:21:08.986257Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3730
+2026-07-19T23:21:09.039440Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-19T23:21:09.040716Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-20T05:24:42.716528Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=66471
+2026-07-20T05:24:42.736067Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-20T05:24:42.901812Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-20T08:53:24.157002Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2553
+2026-07-20T08:53:24.178014Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-20T08:53:24.185891Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-20T11:19:10.091828Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=2553
+2026-07-20T13:29:17.825486Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=5221
+2026-07-20T13:29:17.848060Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-20T13:29:17.852905Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-20T14:22:57.225555Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=5221
+2026-07-20T14:40:37.085715Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17921
+2026-07-20T14:40:37.107283Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-20T14:40:37.142107Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-20T22:57:41.484011Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=8250
+2026-07-20T22:57:41.503991Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-20T22:57:41.520009Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-21T01:34:56.722176Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=8250
+2026-07-21T04:12:14.043167Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=6160
+2026-07-21T04:12:14.049840Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-21T04:12:14.124504Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-21T08:18:44.924810Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2370
+2026-07-21T08:18:45.014097Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-21T08:18:45.036626Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-21T13:43:36.420887Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=30341
+2026-07-21T13:43:36.458865Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-21T13:43:36.499945Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-21T15:14:03.342067Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3229
+2026-07-21T15:14:03.383851Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-21T15:14:03.404614Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-21T22:56:02.921602Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2876
+2026-07-21T22:56:03.019499Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-21T22:56:03.022048Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-22T04:14:27.354081Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3033
+2026-07-22T04:14:27.373459Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-22T04:14:27.386014Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-22T04:55:08.690142Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=3033
+2026-07-22T08:12:49.299887Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17823
+2026-07-22T08:12:49.386411Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-22T08:12:49.496406Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-07-22T09:25:01.058717Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=17823
+2026-07-22T09:27:05.344913Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=34509
+2026-07-22T09:27:05.369202Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-22T09:27:05.618965Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-22T14:10:10.297615Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2897
+2026-07-22T14:10:10.317747Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-22T14:10:10.355046Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-23T05:45:24.993840Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12935
+2026-07-23T05:45:25.014037Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-23T05:45:25.061389Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-23T05:59:41.260823Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12935
+2026-07-23T07:06:03.579510Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=21232
+2026-07-23T07:06:03.579580Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-23T07:06:03.750034Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-23T14:44:21.494278Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2695
+2026-07-23T14:44:21.535642Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-23T14:44:21.565962Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-23T15:50:11.562628Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=2695
+2026-07-23T22:24:22.299149Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=5794
+2026-07-23T22:24:22.320022Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-23T22:24:22.350265Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-23T22:47:14.710975Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=5794
+2026-07-24T00:45:46.178072Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=22779
+2026-07-24T00:45:46.207946Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T00:45:46.322661Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T05:50:53.072756Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=10361
+2026-07-24T05:50:53.099688Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T05:50:53.358368Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T08:09:25.125062Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=31318
+2026-07-24T08:09:25.141005Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T08:09:25.238244Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T08:25:05.875176Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=31318
+2026-07-24T11:06:01.516404Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=14211
+2026-07-24T11:06:01.554539Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T11:06:01.602367Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T13:32:03.261447Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3373
+2026-07-24T13:32:03.290376Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T13:32:03.319160Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T23:40:32.615151Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2521
+2026-07-24T23:40:32.638556Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-24T23:40:32.669476Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-25T10:58:38.594610Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=23518
+2026-07-25T10:58:38.674226Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-25T10:58:38.680012Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-26T00:47:26.480292Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=19461
+2026-07-26T00:47:26.494211Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-26T00:47:26.626465Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-26T03:08:59.349155Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2661
+2026-07-26T03:08:59.465512Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-26T03:08:59.555230Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-27T14:07:09.697753Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=10402
+2026-07-27T14:07:09.742246Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-27T14:07:09.762827Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-28T10:52:40.905169Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=53586
+2026-07-28T10:52:40.931514Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-28T10:52:40.977806Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-28T15:37:46.878065Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=14746
+2026-07-28T15:37:46.911169Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-28T15:37:46.939532Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-28T15:58:44.572570Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=26940
+2026-07-28T15:58:44.590200Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-28T15:58:44.626014Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-29T00:31:23.681270Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3876
+2026-07-29T00:31:23.763401Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-29T00:31:23.795032Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-29T15:01:36.591820Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=6311
+2026-07-29T15:01:36.624994Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-29T15:01:36.746992Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-29T23:50:47.992517Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2038
+2026-07-29T23:50:48.016879Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-29T23:50:48.056925Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-29T23:50:56.840987Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:50:56.841155Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:51:52.159556Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:51:52.159693Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:53:58.131070Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:53:58.131199Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:59:14.808029Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-29T23:59:14.808159Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-30T00:03:10.274569Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-30T00:03:10.274690Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-07-30T00:11:01.332867Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=2038
+2026-07-30T00:21:07.747199Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4647
+2026-07-30T00:21:07.797861Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-30T00:21:07.805694Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-30T12:09:30.980065Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=20501
+2026-07-30T12:09:31.000011Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-30T12:09:31.023151Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-31T08:54:48.882131Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=298992
+2026-07-31T08:54:48.909514Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-07-31T08:54:48.922993Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-01T07:41:10.680535Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12134
+2026-08-01T07:41:10.706184Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-01T07:41:10.742568Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-01T07:42:35.677262Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12134
