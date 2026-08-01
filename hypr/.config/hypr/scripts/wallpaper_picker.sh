@@ -22,10 +22,12 @@ wall=$(find "$WALLDIR" -type f -name "$choice" | head -n1)
 
 awww img "$wall"
 
+WALLSTATE="$HOME/.config/hypr/wallpaper_effects"
+
 # Update current wallpaper symlink (global + per-monitor)
-ln -sf "$wall" "$HOME/.config/rofi/.current_wallpaper"
+ln -sf "$wall" "$WALLSTATE/.wallpaper_current"
 for mon in $(hyprctl monitors -j | jq -r '.[].name'); do
-  ln -sf "$wall" "$HOME/.config/rofi/.current_wallpaper_${mon}"
+  ln -sf "$wall" "$WALLSTATE/.wallpaper_current_${mon}"
 done
 
 # Update border colors from wallpaper

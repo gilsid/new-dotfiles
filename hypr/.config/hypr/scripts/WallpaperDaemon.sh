@@ -21,8 +21,7 @@ for _ in {1..50}; do
   sleep 0.1
 done
 
-wallpaper_link="$HOME/.config/rofi/.current_wallpaper"
-wallpaper_current="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+wallpaper_link="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 
 read_cached_wallpaper() {
   local cache_file="$1"
@@ -40,8 +39,7 @@ get_monitors() {
 
 apply_wallpaper_for_monitor() {
   local monitor="$1"
-  local per_monitor_link="$HOME/.config/rofi/.current_wallpaper_${monitor}"
-  local per_monitor_current="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current_${monitor}"
+  local per_monitor_link="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current_${monitor}"
   local wallpaper_path=""
 
   # Prefer per-monitor symlink target if valid
@@ -53,15 +51,12 @@ apply_wallpaper_for_monitor() {
     fi
   fi
 
-  # Fall back to per-monitor files
+  # Fall back to per-monitor file (non-symlink)
   if [ -z "$wallpaper_path" ] && [ -f "$per_monitor_link" ]; then
     wallpaper_path="$per_monitor_link"
   fi
-  if [ -z "$wallpaper_path" ] && [ -f "$per_monitor_current" ]; then
-    wallpaper_path="$per_monitor_current"
-  fi
 
-  # Fall back to global files
+  # Fall back to global
   if [ -z "$wallpaper_path" ] && [ -L "$wallpaper_link" ]; then
     local resolved_global
     resolved_global="$(readlink -f "$wallpaper_link")"
@@ -71,9 +66,6 @@ apply_wallpaper_for_monitor() {
   fi
   if [ -z "$wallpaper_path" ] && [ -f "$wallpaper_link" ]; then
     wallpaper_path="$wallpaper_link"
-  fi
-  if [ -z "$wallpaper_path" ] && [ -f "$wallpaper_current" ]; then
-    wallpaper_path="$wallpaper_current"
   fi
 
   # Last resort: use per-monitor cache
