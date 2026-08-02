@@ -18,7 +18,8 @@
     "modules-right": [
         "backlight",
         "pulseaudio",
-        "battery"
+        "battery",
+        "custom/idle"
     ],
 
     "tray": {
@@ -101,5 +102,12 @@
                 "󰂅"
             ]
         }
+    },
+    "custom/idle": {
+        "exec": "/home/utopia/.config/hypr/scripts/IdleToggle.sh",
+        "on-click": "/home/utopia/.config/hypr/scripts/IdleToggle.sh toggle",
+        "return-type": "json",
+        "signal": 10,
+        "interval": "once"
     }
 }

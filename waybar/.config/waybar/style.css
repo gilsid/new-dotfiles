@@ -87,8 +87,20 @@ window#waybar {
     background-color: @bg4;
 }
 
-#battery.charging {
-    color: @green;
+#custom-idle {
+    padding: 1px 15px 1px 9px;
+    margin: 6px 0;
+    border-radius: 99px;
+    background-color: @bg4;
+    color: @grey0;
+}
+
+#custom-idle:hover {
+    color: @fg;
+}
+
+#custom-idle.on {
+    color: @grey2;
 }
 
 /* tray popup menu (nm-applet dll) — `all: unset` di atas membunuh styling default GTK, jadi ditimpa manual */
