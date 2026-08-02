@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Toggle hypridle freeze/thaw. Eye icon: crossed = idle active, normal = idle off.
-# Off = kill -STOP (timer paused, resumes from remaining time on enable).
+# Off = kill -STOP (timer paused). On = restart hypridle (timers reset to 0).
 
 pid=$(pgrep -x hypridle | head -n1)
 
@@ -19,10 +19,13 @@ state() {
 case "${1:-}" in
   toggle)
     if idle_frozen; then
+      # thaw → restart fresh so idle timers reset to 0
       pkill -CONT -x hypridle
+      pkill -TERM -x hypridle
+      sleep 0.3
+      pgrep -x hypridle >/dev/null || hypridle >/dev/null 2>&1 &
     else
       pkill -STOP -x hypridle
-      pgrep -x hypridle >/dev/null || hypridle &
     fi
     pkill -RTMIN+10 waybar
     ;;
