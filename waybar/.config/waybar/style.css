@@ -61,7 +61,8 @@ window#waybar {
     padding: 1px 10px;
     margin: 6px 0;
     border-radius: 99px;
-    background-color: @bg4;
+    background-color: @teal;
+    color: @bg0;
 }
 
 .modules-left {
@@ -76,23 +77,40 @@ window#waybar {
     padding: 1px 10px;
     margin: 6px 0;
     border-radius: 99px;
-    background-color: @bg4;
+    background-color: @green;
+    color: @bg0;
 }
 
-#backlight,
+#battery.warning {
+    background-color: @orange;
+}
+
+#battery.critical {
+    background-color: @red;
+}
+
+#backlight {
+    padding: 1px 10px;
+    margin: 6px 0;
+    border-radius: 99px;
+    background-color: @yellow;
+    color: @bg0;
+}
+
 #pulseaudio {
     padding: 1px 10px;
     margin: 6px 0;
     border-radius: 99px;
-    background-color: @bg4;
+    background-color: @blue;
+    color: @bg0;
 }
 
 #custom-idle {
     padding: 1px 15px 1px 9px;
     margin: 6px 0;
     border-radius: 99px;
-    background-color: @bg4;
-    color: @grey0;
+    background-color: @purple;
+    color: @bg0;
 }
 
 #custom-idle:hover {
@@ -100,6 +118,7 @@ window#waybar {
 }
 
 #custom-idle.on {
+    background-color: @bg4;
     color: @grey2;
 }
 
