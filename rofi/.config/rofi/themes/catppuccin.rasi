@@ -1,89 +1,10 @@
-/* Catppuccin Mocha theme - palette */
+/* Catppuccin Mocha palette — warna doang, layout di config.rasi */
+
 * {
-    /* Catppuccin Mocha palette */
-    bg:               rgba(49, 50, 68, 100%);
-    bg-alt:           rgba(69, 71, 90, 100%);
-    bg-hover:         rgba(88, 91, 112, 100%);
-    fg:               rgba(205, 214, 244, 100%);
-    fg-dim:           rgba(148, 156, 187, 100%);
-    accent:           rgba(137, 180, 250, 100%);
-    red:              rgba(243, 139, 168, 100%);
-    green:            rgba(166, 227, 161, 100%);
-    yellow:           rgba(249, 226, 175, 100%);
-    blue:             rgba(137, 180, 250, 100%);
-    magenta:          rgba(203, 166, 247, 100%);
-    cyan:             rgba(148, 226, 213, 100%);
-    orange:           rgba(250, 179, 135, 100%);
-}
-
-window {
-    background-color: transparent;
-    border-radius:    10px;
-    border:           2px;
-    border-color:     @blue;
-    location:         center;
-    anchor:           center;
-    width:            40%;
-    padding:          0.5em;
-    margin:           0px;
-    children:         [inputbar, listview];
-}
-
-inputbar {
-    background-color: @bg-alt;
-    border-radius:    6px;
-    padding:          0.5em;
-    spacing:          0.5em;
-    children:         [prompt, entry];
-}
-
-prompt {
-    text-color: @accent;
-    font:        "JetBrainsMono Nerd Font SemiBold 13";
-}
-
-entry {
-    text-color: @fg;
-    font:       "JetBrainsMono Nerd Font SemiBold 13";
-}
-
-listview {
-    background-color: @bg;
-    border-radius:    6px;
-    padding:          0.5em;
-    spacing:          0.2em;
-    layout:           vertical;
-    columns:          1;
-    lines:            8;
-}
-
-element {
-    background-color: transparent;
-    padding:          0.5em;
-    text-color:       @fg;
-    font:             "JetBrainsMono Nerd Font SemiBold 11";
-}
-
-element selected {
-    background-color: @bg-hover;
-    border-radius:    6px;
-    text-color:       @accent;
-}
-
-element normal.normal,
-element alternate.normal {
-    background-color: transparent;
-    text-color:       @fg;
-}
-
-message {
-    background-color: transparent;
-    padding:          0.5em;
-}
-
-error-message {
-    background-color: @bg;
-    border-radius:    6px;
-    padding:          0.5em;
-    text-color:       @red;
+    background:     #1E1E2EFF;
+    background-alt: #313244FF;
+    foreground:     #CDD6F4FF;
+    selected:       #89B4FAFF;
+    active:         #A6E3A1FF;
+    urgent:         #F38BA8FF;
 }
