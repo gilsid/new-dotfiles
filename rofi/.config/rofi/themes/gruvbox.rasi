@@ -1,8 +1,8 @@
 /* Gruvbox palette (adi1090x colors/gruvbox.rasi) — warna doang, layout di config.rasi */
 
 * {
-    background:     #282828FF;
-    background-alt: #353535FF;
+    background:     #282828E6;
+    background-alt: #353535E6;
     foreground:     #EBDBB2FF;
     selected:       #83A598FF;
     active:         #B8BB26FF;
