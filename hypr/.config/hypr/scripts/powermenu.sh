@@ -1,22 +1,30 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-choice=$(printf "󰌾 Lock\n󰐥 Shutdown\n󰑐 Reboot\n󰤄 Suspend\n󰍃 Logout" |
-rofi -dmenu -i -p "Power")
+uptime="$(uptime -p | sed -e 's/up //g')"
+
+lock=''
+suspend=''
+logout=''
+reboot=''
+shutdown=''
+
+choice=$(printf "%s\n%s\n%s\n%s\n%s\n" "$lock" "$suspend" "$logout" "$reboot" "$shutdown" |
+rofi -dmenu -i -p "Uptime: $uptime" -theme "$HOME/.config/rofi/powermenu.rasi")
 
 case "$choice" in
-"󰌾 Lock")
-hyprlock
-;;
-"󰐥 Shutdown")
-systemctl poweroff
-;;
-"󰑐 Reboot")
-systemctl reboot
-;;
-"󰤄 Suspend")
-hyprlock && systemctl suspend
-;;
-"󰍃 Logout")
-hyprctl dispatch exit
-;;
+"$lock")
+    hyprlock
+    ;;
+"$shutdown")
+    systemctl poweroff
+    ;;
+"$reboot")
+    systemctl reboot
+    ;;
+"$suspend")
+    systemctl suspend
+    ;;
+"$logout")
+    hyprctl dispatch 'hl.dsp.exit()'
+    ;;
 esac

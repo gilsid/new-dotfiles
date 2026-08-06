@@ -1,0 +1,147 @@
+/**
+ * Power Menu — Gruvbox Material (type-3 style-2)
+ *
+ * Base: adi1090x/rofi — powermenu/type-3/style-2
+ * https://github.com/adi1090x/rofi
+ **/
+
+configuration {
+    show-icons: false;
+}
+
+* {
+    /* Gruvbox Material */
+    bg0:      #1d2021;
+    bg3:      #45403d;
+    fg:       #d4be98;
+    blue:     #7daea3;
+    red:      #ea6962;
+    green:    #a9b665;
+
+    /* Layout (tuned for 1366x768)
+     * Button diameter target: 130px
+     * window width  = 130*5 + list-spacing*4 + box-margin-h*2 = 650+96+140 = 886
+     * window height = box-margin-v*2 + inputbar-h(~78) + box-spacing + 130 = 100+78+36+130 = 344
+     */
+    box-spacing:          36px;
+    box-margin:           50px 70px;
+    inputbar-spacing:     0px;
+    list-spacing:         24px;
+    general-padding:      24px;
+    pill-font:            "JetBrainsMono Nerd Font SemiBold 22";
+    listview-scrollable:  false;
+
+    element-padding:      18px 24px;
+    element-radius:       100%;
+    element-margin:       0px 0px;
+    element-font:         "JetBrainsMono Nerd Font Propo SemiBold 54";
+    mainbox-radius:       28px;
+}
+
+/* ── Window ── */
+window {
+    transparency:     "real";
+    location:          center;
+    anchor:            center;
+    fullscreen:        false;
+    width:             886px;
+    cursor:            "default";
+    border-radius:     var(mainbox-radius);
+    background-color:  @bg0;
+}
+
+/* ── Main Box ── */
+mainbox {
+    enabled:           true;
+    spacing:           var(box-spacing);
+    margin:            0px;
+    padding:           var(box-margin);
+    border-radius:     var(mainbox-radius);
+    background-color:  transparent;
+    children:          [ "inputbar", "listview" ];
+}
+
+/* ── Inputbar (SYSTEM + uptime pill, centered via dummy spacers) ── */
+inputbar {
+    enabled:           true;
+    spacing:           var(inputbar-spacing);
+    margin:            0px;
+    padding:           0px;
+    background-color:  transparent;
+    text-color:        @fg;
+    children:          [ "dummy", "textbox-prompt-colon", "prompt", "dummy" ];
+}
+
+dummy {
+    background-color: transparent;
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "SYSTEM";
+    padding:                     var(general-padding);
+    border-radius:                100% 0px 0px 100%;
+    background-color:            @red;
+    text-color:                  @bg0;
+    font:                        var(pill-font);
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     var(general-padding);
+    border-radius:                0px 100% 100% 0px;
+    background-color:            @green;
+    text-color:                  @bg0;
+    font:                        var(pill-font);
+}
+
+/* ── Listview (5 circular buttons) ── */
+listview {
+    enabled:          true;
+    columns:          5;
+    lines:            1;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+    spacing:          var(list-spacing);
+    margin:           0px;
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @fg;
+    cursor:           "default";
+}
+
+/* ── Elements (circles) ── */
+element {
+    enabled:          true;
+    spacing:          0px;
+    margin:           0px;
+    padding:          var(element-padding);
+    border:           0px solid;
+    border-radius:    var(element-radius);
+    border-color:     @blue;
+    background-color: @bg3;
+    text-color:       @fg;
+    cursor:           pointer;
+}
+
+element-text {
+    font:             var(element-font);
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color:        @bg0;
+}

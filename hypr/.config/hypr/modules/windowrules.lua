@@ -77,6 +77,7 @@ hl.layer_rule({
     match = { namespace = "rofi" },
     animation = "slide top",
     blur = true,
+    ignore_alpha = 1,
 })
 
 -- Swaync notification window
@@ -90,7 +91,7 @@ hl.layer_rule({
 hl.window_rule({ name = "ws1-browser",       match = { tag = "browser" },         workspace = "1" })
 hl.window_rule({ name = "ws4-files",         match = { tag = "file-manager" },    workspace = "4" })
 -- hl.window_rule({ name = "ws6-virt",          match = { class = "virt-manager" },  workspace = "6 silent" })
--- hl.window_rule({ name = "ws7-im",            match = { tag = "im" },              workspace = "7" })
+hl.window_rule({ name = "ws7-im",            match = { tag = "im" },              workspace = "7" })
 -- hl.window_rule({ name = "ws8-obsidian",      match = { class = "obsidian" },      workspace = "8" })
--- hl.window_rule({ name = "ws9-multi",         match = { tag = "multimedia" },      workspace = "9" })
+hl.window_rule({ name = "ws9-multi",         match = { tag = "multimedia" },      workspace = "9" })
 hl.window_rule({ name = "ws10-screenshare",  match = { tag = "screenshare" },     workspace = "10 silent" })
