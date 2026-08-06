@@ -26,7 +26,10 @@ hl.window_rule({ name = "tag-browser-edge",       match = { class = "^([Mm]icros
 hl.window_rule({ name = "tag-browser-floorp",     match = { class = "^([Ff]loorp)$" },                              tag = "+browser" })
 
 -- Terminal tag
-hl.window_rule({ name = "tag-terminal", match = { class = "^(Alacritty|kitty|ghostty|wezterm)$" }, tag = "+terminal" })
+hl.window_rule({ name = "tag-terminal", match = { class = "^(Alacritty|kitty|ghostty|com\\.mitchellh\\.ghostty|wezterm)$" }, tag = "+terminal" })
+
+-- Terminal opacity
+hl.window_rule({ name = "opacity-terminal", match = { class = "^(Alacritty|kitty|ghostty|com\\.mitchellh\\.ghostty|wezterm)$" }, opacity = 0.8 })
 
 -- File manager tag
 hl.window_rule({ name = "tag-file-manager", match = { class = "^([Tt]hunar)$" }, tag = "+file-manager" })

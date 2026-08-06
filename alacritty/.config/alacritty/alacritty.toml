@@ -1,19 +1,17 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/hyper.toml"
+    "~/.config/alacritty/themes/gruvbox-material-dark.toml"
 ]
-
-
 
 # ===============================
 # FONT
 # ===============================
 [font]
-size = 14.0
+size = 12.0
 builtin_box_drawing = false
 
 [font.normal]
-family = "FantasqueSansM Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 # ===============================
@@ -26,24 +24,6 @@ opacity = 0.95  # Sedikit lebih solid biar teks tidak burem
 [window.padding]
 x = 0
 y = 0
-
-# ===============================
-# COLORS
-# ===============================
-[colors.primary]
-background = "#000000"
-foreground = "#dddddd"
-
-[colors.cursor]
-cursor = "#dddddd"
-text = "#000000"
-
-# Hilangkan custom selection agar mouse selection normal
-# Kalau mau ubah warna seleksi, pastikan terlihat jelas
-# Contoh:
-# [colors.selection]
-# text = "#000000"
-# background = "#ffffff"
 
 # ===============================
 # SCROLLING

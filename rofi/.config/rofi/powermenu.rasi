@@ -11,7 +11,7 @@ configuration {
 
 * {
     /* Gruvbox Material */
-    bg0:      #1d2021E6;
+    bg0:      #282828E6;
     bg3:      #45403d;
     fg:       #d4be98;
     blue:     #7daea3;

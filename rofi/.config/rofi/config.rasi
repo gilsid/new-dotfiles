@@ -1,6 +1,6 @@
 /* Ganti baris @import untuk pindah warna (layout tetap) */
 
-@import "themes/gruvbox.rasi"
+@import "themes/gruvbox-material-dark.rasi"
 
 /*****----- Configuration -----*****/
 configuration {

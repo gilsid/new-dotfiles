@@ -1,0 +1,10 @@
+/* Gruvbox Material Dark (palette: material, background: medium) — source of truth warna */
+
+* {
+    background:     #282828E6;
+    background-alt: #32302fE6;
+    foreground:     #d4be98FF;
+    selected:       #7daea3FF;
+    active:         #a9b665FF;
+    urgent:         #ea6962FF;
+}
