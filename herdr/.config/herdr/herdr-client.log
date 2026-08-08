@@ -298,3 +298,18 @@
 2026-08-01T07:41:10.706184Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
 2026-08-01T07:41:10.742568Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
 2026-08-01T07:42:35.677262Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12134
+2026-08-02T11:22:17.676881Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=34059
+2026-08-02T11:22:17.695455Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-02T11:22:17.723298Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-02T11:43:02.173202Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=45115
+2026-08-02T11:43:02.173240Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-02T11:43:02.235826Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-02T13:00:31.220265Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=45115
+2026-08-03T01:16:11.883913Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=11516
+2026-08-03T01:16:11.907548Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-03T01:16:11.929787Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-03T01:16:19.168696Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=11516
+2026-08-08T17:21:14.656803Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=51123
+2026-08-08T17:21:14.658078Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-08T17:21:14.661885Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-08-08T17:21:22.807613Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=51123

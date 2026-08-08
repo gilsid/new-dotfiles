@@ -102,6 +102,9 @@ export PATH="$HOME/develop/flutter/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 # NPM global for 9router
 export PATH="$HOME/.npm-global/bin:$PATH"
+# NODE_PATH => KHUSUS untuk Claude/agent (skill /docx), bukan untuk dipakai manual.
+# Paket npm ke-install di ~/.npm-global/lib/node_modules.
+export NODE_PATH="$HOME/.npm-global/lib/node_modules"
 # Local
 export PATH="$HOME/.local/bin:$PATH"
 # NOTE
