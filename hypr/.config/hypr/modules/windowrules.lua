@@ -17,13 +17,16 @@ hl.window_rule({
 })
 
 -- Browser tagging
-hl.window_rule({ name = "tag-browser-firefox",   match = { class = "^([Ff]irefox|org.mozilla.firefox)$" },        tag = "+browser" })
+hl.window_rule({ name = "tag-browser-firefox",    match = { class = "^([Ff]irefox|org.mozilla.firefox)$" },         tag = "+browser" })
 hl.window_rule({ name = "tag-browser-zen",        match = { class = "^(zen-alpha|zen)$" },                          tag = "+browser" })
 hl.window_rule({ name = "tag-browser-chrome",     match = { class = "^([Gg]oogle-chrome(-beta|-dev)?)$" },          tag = "+browser" })
 hl.window_rule({ name = "tag-browser-chromium",   match = { class = "^([Cc]hromium)$" },                            tag = "+browser" })
 hl.window_rule({ name = "tag-browser-brave",      match = { class = "^([Bb]rave-browser(-beta|-dev)?)$" },          tag = "+browser" })
 hl.window_rule({ name = "tag-browser-edge",       match = { class = "^([Mm]icrosoft-edge-stable)$" },               tag = "+browser" })
 hl.window_rule({ name = "tag-browser-floorp",     match = { class = "^([Ff]loorp)$" },                              tag = "+browser" })
+
+-- Code tagg
+hl.window_rule({ name= "tag-code", match= { class= "^(antigravity|antigravity-ide|code|t3code|)$" }, tag = "+code"})
 
 -- Terminal tag
 hl.window_rule({ name = "tag-terminal", match = { class = "^(Alacritty|kitty|ghostty|com\\.mitchellh\\.ghostty|wezterm)$" }, tag = "+terminal" })
@@ -95,6 +98,6 @@ hl.window_rule({ name = "ws1-browser",       match = { tag = "browser" },       
 hl.window_rule({ name = "ws4-files",         match = { tag = "file-manager" },    workspace = "4" })
 -- hl.window_rule({ name = "ws6-virt",          match = { class = "virt-manager" },  workspace = "6 silent" })
 hl.window_rule({ name = "ws7-im",            match = { tag = "im" },              workspace = "7" })
--- hl.window_rule({ name = "ws8-obsidian",      match = { class = "obsidian" },      workspace = "8" })
+hl.window_rule({ name = "ws8-code",          match = { tag = "code" },            workspace = "8" })
 hl.window_rule({ name = "ws9-multi",         match = { tag = "multimedia" },      workspace = "9" })
 hl.window_rule({ name = "ws10-screenshare",  match = { tag = "screenshare" },     workspace = "10 silent" })

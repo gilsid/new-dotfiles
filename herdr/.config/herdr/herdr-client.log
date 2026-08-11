@@ -313,3 +313,17 @@
 2026-08-08T17:21:14.658078Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
 2026-08-08T17:21:14.661885Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
 2026-08-08T17:21:22.807613Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=51123
+2026-08-10T02:11:21.438442Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=9277
+2026-08-10T02:11:21.482735Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-10T02:11:21.508064Z  INFO herdr::client: handshake succeeded version=19 encoding=SemanticFrame
+2026-08-10T07:25:55.707389Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=2679
+2026-08-10T07:25:55.738680Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-10T07:25:55.761579Z  INFO herdr::client: handshake succeeded version=19 encoding=SemanticFrame
+2026-08-10T09:03:20.974437Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=2679
+2026-08-10T09:03:22.812732Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=15210
+2026-08-10T09:03:22.812794Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-10T09:03:23.003033Z  INFO herdr::client: handshake succeeded version=19 encoding=SemanticFrame
+2026-08-10T09:26:49.319454Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=16694
+2026-08-10T09:26:49.324288Z  INFO herdr::client: connecting to server path=/home/utopia/.config/herdr/herdr-client.sock
+2026-08-10T09:26:49.329251Z  INFO herdr::client: handshake succeeded version=19 encoding=SemanticFrame
+2026-08-10T12:38:21.500587Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=16694

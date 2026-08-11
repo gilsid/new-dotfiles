@@ -32,6 +32,68 @@
       "active_tab": 0
     },
     {
+      "id": "wH",
+      "custom_name": "novira",
+      "identity_cwd": "/home/utopia/repos/matchcast",
+      "public_pane_numbers": {
+        "13": 1,
+        "14": 2,
+        "15": 3
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1,
+        2,
+        3
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": "agent",
+          "layout": {
+            "Pane": 13
+          },
+          "panes": {
+            "13": {
+              "cwd": "/home/utopia/repos/matchcast"
+            }
+          },
+          "zoomed": false,
+          "focused": 13,
+          "root_pane": 13
+        },
+        {
+          "custom_name": "server",
+          "layout": {
+            "Pane": 14
+          },
+          "panes": {
+            "14": {
+              "cwd": "/home/utopia/repos/novira"
+            }
+          },
+          "zoomed": false,
+          "focused": 14,
+          "root_pane": 14
+        },
+        {
+          "custom_name": "terminal",
+          "layout": {
+            "Pane": 15
+          },
+          "panes": {
+            "15": {
+              "cwd": "/home/utopia/repos/novira"
+            }
+          },
+          "zoomed": false,
+          "focused": 15,
+          "root_pane": 15
+        }
+      ],
+      "active_tab": 0
+    },
+    {
       "id": "wF",
       "custom_name": null,
       "identity_cwd": "/home/utopia/repos/namid",
@@ -190,9 +252,9 @@
       "custom_name": null,
       "identity_cwd": "/home/utopia/repos/matchcast",
       "public_pane_numbers": {
-        "11": 3,
+        "10": 2,
         "9": 1,
-        "10": 2
+        "11": 3
       },
       "next_public_pane_number": 4,
       "public_tab_numbers": [
@@ -278,8 +340,8 @@
       "active_tab": 0
     }
   ],
-  "active": 0,
-  "selected": 0,
+  "active": 1,
+  "selected": 1,
   "sidebar_width": 21,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []
