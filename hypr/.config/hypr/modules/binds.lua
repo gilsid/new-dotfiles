@@ -26,6 +26,9 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" 
 hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + SPACE", run("systemctl suspend"))
 
+-- Applications
+hl.bind(mainMod .. " + T", run("Telegram"))
+
 -- Group
 hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
 hl.bind(mainMod .. " + Tab", hl.dsp.group.next())
@@ -60,16 +63,28 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
-hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
-hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
+hl.bind(mainMod .. " + CTRL + H",     hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + L",     hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + K",     hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
+hl.bind(mainMod .. " + CTRL + J",     hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
+hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
+hl.bind(mainMod .. " + CTRL + up",    hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
+hl.bind(mainMod .. " + CTRL + down",  hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
 
-hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + CTRL + up",    hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + CTRL + down",  hl.dsp.window.move({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + H",     hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + L",     hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + K",     hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + J",     hl.dsp.window.move({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
+hl.bind(mainMod .. " + ALT + H",     hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + ALT + L",     hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + ALT + K",     hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + ALT + J",     hl.dsp.window.swap({ direction = "down" }))
 hl.bind(mainMod .. " + ALT + left",  hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + ALT + right", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(mainMod .. " + ALT + up",    hl.dsp.window.swap({ direction = "up" }))
@@ -80,8 +95,8 @@ hl.bind(mainMod .. " + ALT + down",  hl.dsp.window.swap({ direction = "down" }))
 -------------------------
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(mainMod .. " + mouse:272",  hl.dsp.window.drag(),   { mouse = true })
+hl.bind(mainMod .. " + mouse:273",  hl.dsp.window.resize(), { mouse = true })
 
 for i = 1, 10 do
     local key = i % 10
@@ -111,6 +126,3 @@ hl.bind(mainMod .. " + P", run(sDir .. "/powermenu.sh"))
 hl.bind("CTRL + ALT + L", run(sDir .. "/LockScreen.sh"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 hl.bind(mainMod .. " + W", run(sDir .. "/wallpaper_picker.sh"))
-
--- Telegram (from user custom binds)
-hl.bind(mainMod .. " + T", run("Telegram"))
