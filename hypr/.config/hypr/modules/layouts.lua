@@ -1,6 +1,7 @@
 hl.config({
     general = {
         layout = "dwindle",
+        resize_on_border = true,
     },
 
     dwindle = {

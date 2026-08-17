@@ -11,6 +11,7 @@
   - [[#basic-settings][Basic Settings]]
   - [[#headers-1][Headers]]
 - [[#sensible-defaults][Sensible Defaults]]
+- [[#ghostel][Ghostel]]
 - [[#opencode-settings][Opencode Settings]]
 - [[#jsonc-mode][JSONC Mode]]
 - [[#claude-code][Claude Code]]
@@ -43,13 +44,8 @@
 (map! :leader
       (:prefix ("o" . "open here")
        ;; :desc "Open eshell here"    "e" #'+eshell/here
-       :desc "Open vterm here"     "v" #'+vterm/here))
+       :desc "Open ghostel here"   "v" #'ghostel-project))
 
-;; Binds opencode
-(after! opencode
-  (map! :leader
-        :desc "OpenCode"
-        "o o" #'opencode))
 #+end_src
 
 * Markdown
@@ -120,6 +116,22 @@ This sets the font size for each Org header level.  Having variable font sizes i
 
 #+end_src
 
+* Ghostel
+
+#+begin_src emacs-lisp
+(use-package! ghostel
+  :bind (("C-x m" . ghostel)
+         :map ghostel-semi-char-mode-map
+         ("M-p" . (lambda () (interactive) (ghostel-send-key "p" "ctrl")))
+         ("M-n" . (lambda () (interactive) (ghostel-send-key "n" "ctrl"))))
+  :config
+  (add-to-list 'ghostel-eval-cmds '("magit-status-setup-buffer" magit-status-setup-buffer)))
+
+(use-package! evil-ghostel
+  :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode))
+#+end_src
+
 * Opencode Settings
 #+begin_src emacs-lisp
 (after! opencode
@@ -151,6 +163,7 @@ This sets the font size for each Org header level.  Having variable font sizes i
 #+begin_src emacs-lisp
 (use-package! claude-code-ide
   :config
+  (setq claude-code-ide-terminal-backend 'ghostel)
   (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
 (after! claude-code-ide

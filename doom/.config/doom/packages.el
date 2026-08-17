@@ -57,3 +57,5 @@
   :recipe (:host codeberg :repo "sczi/opencode.el"))
 (package! claude-code-ide
   :recipe (:host github :repo "manzaltu/claude-code-ide.el"))
+(package! ghostel)
+(package! evil-ghostel)

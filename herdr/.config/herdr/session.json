@@ -36,9 +36,9 @@
       "custom_name": "novira",
       "identity_cwd": "/home/utopia/repos/matchcast",
       "public_pane_numbers": {
-        "13": 1,
-        "14": 2,
-        "15": 3
+        "2": 1,
+        "3": 2,
+        "4": 3
       },
       "next_public_pane_number": 4,
       "public_tab_numbers": [
@@ -51,44 +51,44 @@
         {
           "custom_name": "agent",
           "layout": {
-            "Pane": 13
+            "Pane": 2
           },
           "panes": {
-            "13": {
+            "2": {
               "cwd": "/home/utopia/repos/matchcast"
             }
           },
           "zoomed": false,
-          "focused": 13,
-          "root_pane": 13
+          "focused": 2,
+          "root_pane": 2
         },
         {
           "custom_name": "server",
           "layout": {
-            "Pane": 14
+            "Pane": 3
           },
           "panes": {
-            "14": {
+            "3": {
               "cwd": "/home/utopia/repos/novira"
             }
           },
           "zoomed": false,
-          "focused": 14,
-          "root_pane": 14
+          "focused": 3,
+          "root_pane": 3
         },
         {
           "custom_name": "terminal",
           "layout": {
-            "Pane": 15
+            "Pane": 4
           },
           "panes": {
-            "15": {
+            "4": {
               "cwd": "/home/utopia/repos/novira"
             }
           },
           "zoomed": false,
-          "focused": 15,
-          "root_pane": 15
+          "focused": 4,
+          "root_pane": 4
         }
       ],
       "active_tab": 0
@@ -98,8 +98,8 @@
       "custom_name": null,
       "identity_cwd": "/home/utopia/repos/namid",
       "public_pane_numbers": {
-        "2": 2,
-        "3": 1
+        "5": 2,
+        "6": 1
       },
       "next_public_pane_number": 5,
       "public_tab_numbers": [
@@ -111,30 +111,30 @@
         {
           "custom_name": "agent",
           "layout": {
-            "Pane": 2
+            "Pane": 5
           },
           "panes": {
-            "2": {
+            "5": {
               "cwd": "/home/utopia/repos/namid"
             }
           },
           "zoomed": false,
-          "focused": 2,
-          "root_pane": 2
+          "focused": 5,
+          "root_pane": 5
         },
         {
           "custom_name": "terminal",
           "layout": {
-            "Pane": 3
+            "Pane": 6
           },
           "panes": {
-            "3": {
+            "6": {
               "cwd": "/home/utopia/repos/namid"
             }
           },
           "zoomed": false,
-          "focused": 3,
-          "root_pane": 3
+          "focused": 6,
+          "root_pane": 6
         }
       ],
       "active_tab": 0
@@ -144,8 +144,8 @@
       "custom_name": null,
       "identity_cwd": "/home/utopia/repos/nutrilensia",
       "public_pane_numbers": {
-        "4": 1,
-        "5": 2
+        "7": 1,
+        "8": 2
       },
       "next_public_pane_number": 5,
       "public_tab_numbers": [
@@ -157,73 +157,11 @@
         {
           "custom_name": "agent",
           "layout": {
-            "Pane": 4
-          },
-          "panes": {
-            "4": {
-              "cwd": "/home/utopia/repos/nutrilensia"
-            }
-          },
-          "zoomed": false,
-          "focused": 4,
-          "root_pane": 4
-        },
-        {
-          "custom_name": "terminal",
-          "layout": {
-            "Pane": 5
-          },
-          "panes": {
-            "5": {
-              "cwd": "/home/utopia/repos/nutrilensia"
-            }
-          },
-          "zoomed": false,
-          "focused": 5,
-          "root_pane": 5
-        }
-      ],
-      "active_tab": 0
-    },
-    {
-      "id": "w5",
-      "custom_name": "undangan-digital",
-      "identity_cwd": "/home/utopia/repos/undangan-digital",
-      "public_pane_numbers": {
-        "8": 4,
-        "6": 7,
-        "7": 2
-      },
-      "next_public_pane_number": 8,
-      "public_tab_numbers": [
-        6,
-        2,
-        4
-      ],
-      "next_public_tab_number": 7,
-      "tabs": [
-        {
-          "custom_name": "agent",
-          "layout": {
-            "Pane": 6
-          },
-          "panes": {
-            "6": {
-              "cwd": "/home/utopia/repos/undangan-digital"
-            }
-          },
-          "zoomed": false,
-          "focused": 6,
-          "root_pane": 6
-        },
-        {
-          "custom_name": "server",
-          "layout": {
             "Pane": 7
           },
           "panes": {
             "7": {
-              "cwd": "/home/utopia/repos/undangan-digital"
+              "cwd": "/home/utopia/repos/nutrilensia"
             }
           },
           "zoomed": false,
@@ -237,7 +175,7 @@
           },
           "panes": {
             "8": {
-              "cwd": "/home/utopia/repos/undangan-digital"
+              "cwd": "/home/utopia/repos/nutrilensia"
             }
           },
           "zoomed": false,
@@ -248,21 +186,21 @@
       "active_tab": 0
     },
     {
-      "id": "w9",
-      "custom_name": null,
-      "identity_cwd": "/home/utopia/repos/matchcast",
+      "id": "w5",
+      "custom_name": "undangan-digital",
+      "identity_cwd": "/home/utopia/repos/undangan-digital",
       "public_pane_numbers": {
+        "11": 4,
         "10": 2,
-        "9": 1,
-        "11": 3
+        "9": 7
       },
-      "next_public_pane_number": 4,
+      "next_public_pane_number": 8,
       "public_tab_numbers": [
-        1,
+        6,
         2,
-        3
+        4
       ],
-      "next_public_tab_number": 4,
+      "next_public_tab_number": 7,
       "tabs": [
         {
           "custom_name": "agent",
@@ -271,7 +209,7 @@
           },
           "panes": {
             "9": {
-              "cwd": "/home/utopia/repos/matchcast"
+              "cwd": "/home/utopia/repos/undangan-digital"
             }
           },
           "zoomed": false,
@@ -285,7 +223,7 @@
           },
           "panes": {
             "10": {
-              "cwd": "/home/utopia/repos/matchcast"
+              "cwd": "/home/utopia/repos/undangan-digital"
             }
           },
           "zoomed": false,
@@ -299,7 +237,7 @@
           },
           "panes": {
             "11": {
-              "cwd": "/home/utopia/repos/matchcast"
+              "cwd": "/home/utopia/repos/undangan-digital"
             }
           },
           "zoomed": false,
@@ -310,11 +248,73 @@
       "active_tab": 0
     },
     {
+      "id": "w9",
+      "custom_name": null,
+      "identity_cwd": "/home/utopia/repos/matchcast",
+      "public_pane_numbers": {
+        "13": 2,
+        "14": 3,
+        "12": 1
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1,
+        2,
+        3
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": "agent",
+          "layout": {
+            "Pane": 12
+          },
+          "panes": {
+            "12": {
+              "cwd": "/home/utopia/repos/matchcast"
+            }
+          },
+          "zoomed": false,
+          "focused": 12,
+          "root_pane": 12
+        },
+        {
+          "custom_name": "server",
+          "layout": {
+            "Pane": 13
+          },
+          "panes": {
+            "13": {
+              "cwd": "/home/utopia/repos/matchcast"
+            }
+          },
+          "zoomed": false,
+          "focused": 13,
+          "root_pane": 13
+        },
+        {
+          "custom_name": "terminal",
+          "layout": {
+            "Pane": 14
+          },
+          "panes": {
+            "14": {
+              "cwd": "/home/utopia/repos/matchcast"
+            }
+          },
+          "zoomed": false,
+          "focused": 14,
+          "root_pane": 14
+        }
+      ],
+      "active_tab": 0
+    },
+    {
       "id": "wB",
       "custom_name": null,
       "identity_cwd": "/home/utopia/.pi",
       "public_pane_numbers": {
-        "12": 1
+        "15": 1
       },
       "next_public_pane_number": 3,
       "public_tab_numbers": [
@@ -325,16 +325,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 12
+            "Pane": 15
           },
           "panes": {
-            "12": {
+            "15": {
               "cwd": "/home/utopia/.pi"
             }
           },
           "zoomed": false,
-          "focused": 12,
-          "root_pane": 12
+          "focused": 15,
+          "root_pane": 15
         }
       ],
       "active_tab": 0

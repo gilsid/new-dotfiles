@@ -19,13 +19,7 @@
 (map! :leader
       (:prefix ("o" . "open here")
        ;; :desc "Open eshell here"    "e" #'+eshell/here
-       :desc "Open vterm here"     "v" #'+vterm/here))
-
-;; Binds opencode
-(after! opencode
-  (map! :leader
-        :desc "OpenCode"
-        "o o" #'opencode))
+       :desc "Open ghostel here"   "v" #'ghostel-project))
 
 (custom-set-faces
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
@@ -66,6 +60,18 @@
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
 ;; (setq initial-buffer-choice 'eshell) ;; Eshell is initial buffer
 
+(use-package! ghostel
+  :bind (("C-x m" . ghostel)
+         :map ghostel-semi-char-mode-map
+         ("M-p" . (lambda () (interactive) (ghostel-send-key "p" "ctrl")))
+         ("M-n" . (lambda () (interactive) (ghostel-send-key "n" "ctrl"))))
+  :config
+  (add-to-list 'ghostel-eval-cmds '("magit-status-setup-buffer" magit-status-setup-buffer)))
+
+(use-package! evil-ghostel
+  :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode))
+
 (after! opencode
  ;; Buka OpenCode di window saat ini, bukan popup di bawah.
  (defun my/opencode-open-project-same-window (orig-fn directory)
@@ -87,6 +93,7 @@
 
 (use-package! claude-code-ide
   :config
+  (setq claude-code-ide-terminal-backend 'ghostel)
   (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
 (after! claude-code-ide
