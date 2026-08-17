@@ -7315,3 +7315,38 @@
 2026-08-17T04:39:41.974677Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
 2026-08-17T05:09:40.237014Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-08-17T05:09:41.298308Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-17T05:38:58.168347Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=15 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.207620Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.236521Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=13 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.313466Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.345815Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.371110Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.461359Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.497288Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.508135Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.533408Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.636288Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.765658Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:58.837502Z  INFO herdr::pane: pane session terminated pane=6 pid=10993 signal=Hangup
+2026-08-17T05:38:58.954939Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:59.278223Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=14 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:38:59.529561Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T05:39:03.296474Z  INFO herdr::server::headless: server shutdown initiated
+2026-08-17T05:39:03.346750Z  INFO herdr::server::headless: completing server shutdown
+2026-08-17T05:39:03.347660Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/utopia/.config/herdr/session.json workspaces=7
+2026-08-17T05:39:03.347788Z  INFO herdr::server::headless: headless server exiting
+2026-08-17T05:39:03.348003Z  INFO herdr::pane: pane session terminated pane=10 pid=11049 signal=Hangup
+2026-08-17T05:39:03.348043Z  INFO herdr::pane: pane session terminated pane=9 pid=11043 signal=Hangup
+2026-08-17T05:39:03.348065Z  INFO herdr::pane: pane session terminated pane=15 pid=11102 signal=Hangup
+2026-08-17T05:39:03.348090Z  INFO herdr::pane: pane session terminated pane=8 pid=11016 signal=Hangup
+2026-08-17T05:39:03.348114Z  INFO herdr::pane: pane session terminated pane=3 pid=10950 signal=Hangup
+2026-08-17T05:39:03.348135Z  INFO herdr::pane: pane session terminated pane=12 pid=11078 signal=Hangup
+2026-08-17T05:39:03.348154Z  INFO herdr::pane: pane session terminated pane=5 pid=10988 signal=Hangup
+2026-08-17T05:39:03.348173Z  INFO herdr::pane: pane session terminated pane=11 pid=11060 signal=Hangup
+2026-08-17T05:39:03.348193Z  INFO herdr::pane: pane session terminated pane=2 pid=10939 signal=Hangup
+2026-08-17T05:39:03.348214Z  INFO herdr::pane: pane session terminated pane=1 pid=10931 signal=Hangup
+2026-08-17T05:39:03.348234Z  INFO herdr::pane: pane session terminated pane=4 pid=10954 signal=Hangup
+2026-08-17T05:39:03.348265Z  INFO herdr::pane: pane session terminated pane=7 pid=11012 signal=Hangup
+2026-08-17T05:39:03.348293Z  INFO herdr::pane: pane session terminated pane=14 pid=11092 signal=Hangup
+2026-08-17T05:39:03.348320Z  INFO herdr::pane: pane session terminated pane=13 pid=11084 signal=Hangup
+2026-08-17T05:39:03.352352Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=10927

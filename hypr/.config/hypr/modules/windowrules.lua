@@ -49,7 +49,7 @@ hl.window_rule({ name = "tag-screenshare-obs", match = { class = "^(com.obsproje
 
 -- Float rules
 hl.window_rule({ name = "float-zoom",           match = { class = "^([Zz]oom)" },               float = true })
-hl.window_rule({ name = "float-mpv",            match = { class = "^(mpv)$" },                   float = true })
+-- hl.window_rule({ name = "float-mpv",            match = { class = "^(mpv)$" },                   float = true })
 hl.window_rule({ name = "float-qalculate",      match = { class = "^([Qq]alculate-gtk)$" },      float = true })
 hl.window_rule({ name = "float-polkit",         match = { class = "^(xfce-polkit|mate-polkit)$" }, float = true, center = true })
 hl.window_rule({ name = "float-steam-dialogs",  match = { class = "^([Ss]team)$" },              float = true, center = true })
