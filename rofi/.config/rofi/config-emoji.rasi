@@ -1,0 +1,43 @@
+/* Emoji Picker — grid 5x5, warna ikut config.rasi (gruvbox material dark) */
+
+@import "config.rasi"
+
+configuration {
+    lines:         5;
+    padding:       0.5em;
+}
+
+/*****----- Grid Override -----*****/
+window {
+    width:                       700px;
+}
+
+listview {
+    columns:                     5;
+    lines:                       5;
+    spacing:                     8px;
+    padding:                     0px;
+    scrollbar:                   false;
+}
+
+element {
+    padding:                     10px 4px;
+    border-radius:               14px;
+    text-color:                  @foreground-colour;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+}
+
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
+
+element-text {
+    font:                        "JetBrainsMono Nerd Font Propo SemiBold 26";
+    horizontal-align:            0.15;
+    vertical-align:              0.5;
+}
