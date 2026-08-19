@@ -58,6 +58,7 @@
 (global-display-line-numbers-mode) ;; Set display line numbers to relative
 (setq-default compile-command "") ;; Set default compile-command to empty
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
+(setq bookmark-save-flag 1)
 ;; (setq initial-buffer-choice 'eshell) ;; Eshell is initial buffer
 
 (use-package! ghostel

@@ -112,8 +112,8 @@ This sets the font size for each Org header level.  Having variable font sizes i
 (global-display-line-numbers-mode) ;; Set display line numbers to relative
 (setq-default compile-command "") ;; Set default compile-command to empty
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
+(setq bookmark-save-flag 1)
 ;; (setq initial-buffer-choice 'eshell) ;; Eshell is initial buffer
-
 #+end_src
 
 * Ghostel

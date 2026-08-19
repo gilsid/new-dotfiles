@@ -29,6 +29,7 @@ hl.bind(mainMod .. " + SHIFT + SPACE", run("systemctl suspend"))
 
 -- Applications
 hl.bind(mainMod .. " + T", run("Telegram"))
+hl.bind(mainMod .. " + D", run('emacsclient -c -a ""'))
 
 -- Group
 hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
