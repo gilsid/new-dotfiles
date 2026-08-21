@@ -36,7 +36,7 @@
        :desc "Toggle line highlight in frame" "h" #'hl-line-mode
        :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
-       :desc "Toggle markdown-view-mode"      "m" #'dt/toggle-markdown-view-mode
+       :desc "Toggle markdown-view-mode"      "m" #'cstm/toggle-markdown-view-mode
        :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
        ;; :desc "Toggle treemacs"                "T" #'+treemacs/toggle
        ;; :desc "Toggle vterm split"             "v" #'+vterm/toggle))
@@ -66,10 +66,10 @@ This sets the font size for each markdown header level.  Having variable font si
 #+end_src
 
 ** Toggle Markdown View
-A custom function to toggle between standard 'markdown-mode' and 'markdown-view-mode'.  Custom functions in Emacs should be named as "prefix/name-of-function" to make it clear that the function is custom and not a standard Emacs function.  In my case, I begin all my custom functions with 'dt'.
+A custom function to toggle between standard 'markdown-mode' and 'markdown-view-mode'.  Custom functions in Emacs should be named as "prefix/name-of-function" to make it clear that the function is custom and not a standard Emacs function.  In my case, I begin all my custom functions with 'cstm'.
 
 #+begin_src emacs-lisp
-(defun dt/toggle-markdown-view-mode ()
+(defun cstm/toggle-markdown-view-mode ()
   "Toggle between `markdown-mode' and `markdown-view-mode'."
   (interactive)
   (if (eq major-mode 'markdown-view-mode)
@@ -113,6 +113,7 @@ This sets the font size for each Org header level.  Having variable font sizes i
 (setq-default compile-command "") ;; Set default compile-command to empty
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
 (setq bookmark-save-flag 1)
+(add-to-list 'default-frame-alist '(alpha-background . 75)) ;; Set emacs opacity to 75
 ;; (setq initial-buffer-choice 'eshell) ;; Eshell is initial buffer
 #+end_src
 
@@ -136,14 +137,14 @@ This sets the font size for each Org header level.  Having variable font sizes i
 #+begin_src emacs-lisp
 (after! opencode
  ;; Buka OpenCode di window saat ini, bukan popup di bawah.
- (defun my/opencode-open-project-same-window (orig-fn directory)
+ (defun cstm/opencode-open-project-same-window (orig-fn directory)
    (let ((display-buffer-overriding-action
           '((display-buffer-same-window))))
      (funcall orig-fn directory)))
 
  (advice-add 'opencode-open-project
              :around
-             #'my/opencode-open-project-same-window)
+             #'cstm/opencode-open-project-same-window)
 
  (map! :leader
        :desc "OpenCode"

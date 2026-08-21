@@ -11,7 +11,7 @@
        :desc "Toggle line highlight in frame" "h" #'hl-line-mode
        :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
-       :desc "Toggle markdown-view-mode"      "m" #'dt/toggle-markdown-view-mode
+       :desc "Toggle markdown-view-mode"      "m" #'cstm/toggle-markdown-view-mode
        :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
        ;; :desc "Toggle treemacs"                "T" #'+treemacs/toggle
        ;; :desc "Toggle vterm split"             "v" #'+vterm/toggle))
@@ -30,7 +30,7 @@
  '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.2))))
  '(markdown-header-face-6 ((t (:inherit markdown-header-face :height 1.1)))))
 
-(defun dt/toggle-markdown-view-mode ()
+(defun cstm/toggle-markdown-view-mode ()
   "Toggle between `markdown-mode' and `markdown-view-mode'."
   (interactive)
   (if (eq major-mode 'markdown-view-mode)
@@ -59,6 +59,7 @@
 (setq-default compile-command "") ;; Set default compile-command to empty
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
 (setq bookmark-save-flag 1)
+(add-to-list 'default-frame-alist '(alpha-background . 75)) ;; Set emacs opacity to 75
 ;; (setq initial-buffer-choice 'eshell) ;; Eshell is initial buffer
 
 (use-package! ghostel
@@ -75,14 +76,14 @@
 
 (after! opencode
  ;; Buka OpenCode di window saat ini, bukan popup di bawah.
- (defun my/opencode-open-project-same-window (orig-fn directory)
+ (defun cstm/opencode-open-project-same-window (orig-fn directory)
    (let ((display-buffer-overriding-action
           '((display-buffer-same-window))))
      (funcall orig-fn directory)))
 
  (advice-add 'opencode-open-project
              :around
-             #'my/opencode-open-project-same-window)
+             #'cstm/opencode-open-project-same-window)
 
  (map! :leader
        :desc "OpenCode"

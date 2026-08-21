@@ -6,6 +6,7 @@ return {
     config = function()
       require("gruvbox").setup({
         contrast = "hard",
+        transparent_mode = true,
         palette_overrides = { dark0_hard = "#1d2021" },
       })
     end,
@@ -19,6 +20,7 @@ return {
     config = function()
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_transparent_background = 1
     end,
   },
 
@@ -31,6 +33,7 @@ return {
       require("everforest").setup({
         background = "hard",
         ui_contrast = "high",
+        transparent_background = true,
       })
     end,
   },
@@ -43,6 +46,7 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
+        transparent_background = true,
       })
     end,
   },
@@ -56,6 +60,7 @@ return {
     config = function()
       require("kanagawa").setup({
         theme = "dragon",
+        transparent = true,
         background = { dark = "dragon" },
       })
     end,
@@ -65,10 +70,16 @@ return {
   { "rose-pine/neovim", name = "rose-pine" },
 
   -- 8. OneDark
-  { "navarasu/onedark.nvim" },
+  {
+    "navarasu/onedark.nvim",
+    opts = { transparent = true },
+  },
 
   -- 9. TokyoNight (Fallback)
-  { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    opts = { transparent = true },
+  },
 
   -- 10. Nightfox
   { "EdenEast/nightfox.nvim" },
@@ -90,5 +101,8 @@ return {
   { "nyoom-engineering/oxocarbon.nvim" },
 
   -- 15. Dracula
-  { "Mofiqul/dracula.nvim" },
+  {
+    "Mofiqul/dracula.nvim",
+    opts = { transparent_bg = true },
+  },
 }
