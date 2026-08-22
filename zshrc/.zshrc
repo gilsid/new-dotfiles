@@ -19,12 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 
-# Display Pokemon-colorscripts
-# Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
-#pokemon-colorscripts --no-title -s -r #without fastfetch
-#pokemon-colorscripts --no-title -s -r | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
-
-# fastfetch. Will be disabled if above colorscript was chosen to install
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
 # Set-up icons for files/directories in terminal using lsd
@@ -46,11 +40,18 @@ alias start9router="source $HOME/env-penting/.env9router && 9router"
 
 # VI MODE
 bindkey -v
-# FZF
-source <(fzf --zsh)
+# FZF — guard biar tidak error jika fzf belum install, eval lebih portabel dari source <(...)
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
 fzf-files() {
 	local file
-	file=$(fd -H -t f . | fzf --preview 'bat --style=numbers --color=always {}')
+	# fallback ke find jika fd tidak ada, bat optional
+	if command -v fd >/dev/null 2>&1; then
+		file=$(fd -H -t f . 2>/dev/null | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
+	else
+		file=$(find . -type f 2>/dev/null | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
+	fi
 	[[ -n "$file" ]] && LBUFFER+="$file"
 }
 zle -N fzf-files
@@ -86,27 +87,25 @@ yt() {
 	fi
 }
 
-# Set Neovim sebagai default editor
+# Set Neovim sebagai default editor (sudo 1.9+ pakai EDITOR, SUDO_EDITOR deprecated)
 export EDITOR=nvim
 export VISUAL=nvim
-export SUDO_EDITOR=nvim
 
-# PATH
-# Gemini
-export PATH="$HOME/.bun/bin:$PATH"
-# Laravel
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-# Flutter
-export PATH="$HOME/develop/flutter/bin:$PATH"
-# Doom Emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
-# NPM global for 9router
-export PATH="$HOME/.npm-global/bin:$PATH"
+# PATH — deduplicate, biar tidak dobel tiap source ~/.zshrc
+typeset -U path PATH
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.bun/bin"
+  "$HOME/develop/flutter/bin"
+  "$HOME/.config/emacs/bin"
+  "$HOME/.npm-global/bin"
+  "$HOME/.config/composer/vendor/bin"
+  $path
+)
+export PATH
 # NODE_PATH => KHUSUS untuk Claude/agent (skill /docx), bukan untuk dipakai manual.
 # Paket npm ke-install di ~/.npm-global/lib/node_modules.
 export NODE_PATH="$HOME/.npm-global/lib/node_modules"
-# Local
-export PATH="$HOME/.local/bin:$PATH"
 # NOTE
 echo "Boot.dev sudah sampai chapter 9 : Lists Level 1"
 

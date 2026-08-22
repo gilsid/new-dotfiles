@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Scripts for volume controls for audio and mic
 
 iDIR="$HOME/.config/swaync/icons"
@@ -59,7 +60,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -i "$1" --allow-boost --set-limit 150 && notify_user
+        pamixer -i "${1:-}" --allow-boost --set-limit 150 && notify_user
     fi
 }
 
@@ -68,7 +69,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -d "$1" && notify_user
+        pamixer -d "${1:-}" && notify_user
     fi
 }
 
@@ -154,7 +155,7 @@ dec_mic_volume() {
 }
 
 # Execute accordingly
-case "$1" in
+case "${1:-}" in
 "--get")
   get_volume
   ;;

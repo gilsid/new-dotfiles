@@ -2,7 +2,7 @@ local term    = USER_CONFIG.terminal
 local files   = USER_CONFIG.file_manager
 local menu    = USER_CONFIG.launcher
 local browser = USER_CONFIG.browser_cmd
-local sDir    = "/home/utopia/.config/hypr/scripts"
+local sDir    = os.getenv("HOME") .. "/.config/hypr/scripts"
 local mainMod = "SUPER"
 
 -- Wrap exec_cmd: hl.dsp.exec_cmd broken for complex cmds in 0.56.1

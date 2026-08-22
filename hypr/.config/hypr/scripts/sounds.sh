@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # This script is used to play system sounds.
 # Script is used by volume.sh and screenShot.sh
 
@@ -16,19 +17,19 @@ if [[ "$mute" = true ]]; then
 fi
 
 # Choose the sound to play.
-if [[ "$1" == "--screenshot" ]]; then
+if [[ "${1:-}" == "--screenshot" ]]; then
     if [[ "$muteScreenshots" = true ]]; then
         exit 0
     fi
     directSound="$directSoundDir/screenshot.ogg"
     soundoption="screen-capture.*"
-elif [[ "$1" == "--volume" ]]; then
+elif [[ "${1:-}" == "--volume" ]]; then
     if [[ "$muteVolume" = true ]]; then
         exit 0
     fi
     directSound="$directSoundDir/volume.ogg"
     soundoption="audio-volume-change.*"
-elif [[ "$1" == "--error" ]]; then
+elif [[ "${1:-}" == "--error" ]]; then
     if [[ "$muteScreenshots" = true ]]; then
         exit 0
     fi
@@ -63,15 +64,15 @@ iDIR="$sDIR/../$iTheme"
 # Helper to play in the background (fast return).
 play_sound() {
     if command -v paplay >/dev/null 2>&1; then
-        paplay "$1" >/dev/null 2>&1 &
+        paplay "${1:-}" >/dev/null 2>&1 &
         exit 0
     fi
     if command -v pw-play >/dev/null 2>&1; then
-        pw-play "$1" >/dev/null 2>&1 &
+        pw-play "${1:-}" >/dev/null 2>&1 &
         exit 0
     fi
     if command -v aplay >/dev/null 2>&1; then
-        aplay "$1" >/dev/null 2>&1 &
+        aplay "${1:-}" >/dev/null 2>&1 &
         exit 0
     fi
     echo "Error: No suitable audio player found. Install paplay (pulseaudio-utils) or PipeWire/ALSA tools."

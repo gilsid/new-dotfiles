@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Clipboard Manager. This script uses cliphist, rofi, and wl-copy.
 
 # Variables

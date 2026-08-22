@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -eu
 # Toggle hypridle freeze/thaw. Eye icon: crossed = idle active, normal = idle off.
 # Off = kill -STOP (timer paused). On = restart hypridle (timers reset to 0).
 

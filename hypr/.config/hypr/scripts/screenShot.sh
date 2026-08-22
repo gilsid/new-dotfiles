@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Screenshots scripts
 
 # variables
@@ -22,7 +23,7 @@ notify_cmd_NOT="notify-send -u low -i ${iDoR}/note.png "
 
 # notify and view screenshot
 notify_view() {
-    if [[ "$1" == "active" ]]; then
+    if [[ "${1:-}" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
 			"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
             resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
@@ -39,7 +40,7 @@ notify_view() {
             "${sDIR}/sounds.sh" --error >/dev/null 2>&1 &
         fi
 
-    elif [[ "$1" == "swappy" ]]; then
+    elif [[ "${1:-}" == "swappy" ]]; then
 		"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
 		resp=$(${notify_cmd_shot} " Screenshot:" " Captured by Swappy")
 		case "$resp" in
@@ -140,19 +141,19 @@ if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
 fi
 
-if [[ "$1" == "--now" ]]; then
+if [[ "${1:-}" == "--now" ]]; then
 	shotnow
-elif [[ "$1" == "--in5" ]]; then
+elif [[ "${1:-}" == "--in5" ]]; then
 	shot5
-elif [[ "$1" == "--in10" ]]; then
+elif [[ "${1:-}" == "--in10" ]]; then
 	shot10
-elif [[ "$1" == "--win" ]]; then
+elif [[ "${1:-}" == "--win" ]]; then
 	shotwin
-elif [[ "$1" == "--area" ]]; then
+elif [[ "${1:-}" == "--area" ]]; then
 	shotarea
-elif [[ "$1" == "--active" ]]; then
+elif [[ "${1:-}" == "--active" ]]; then
 	shotactive
-elif [[ "$1" == "--swappy" || "$1" == "--swapp" || "$1" == "--swap" ]]; then
+elif [[ "${1:-}" == "--swappy" || "${1:-}" == "--swapp" || "${1:-}" == "--swap" ]]; then
 	shotswappy
 else
 	echo -e "Available Options : --now --in5 --in10 --win --area --active --swappy (--swapp/--swap)"

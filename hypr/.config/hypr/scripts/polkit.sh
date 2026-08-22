@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # This script starts the first available Polkit agent from a list of possible locations
 # Avoid duplicate agents (common with UWSM/session autostart)
 if pgrep -u "$UID" -f 'xfce-polkit|polkit-gnome-authentication-agent-1|polkit-kde-authentication-agent-1|polkit-mate-authentication-agent-1|mate-polkit|hyprpolkitagent' >/dev/null 2>&1; then

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Wallpaper command selector (awww preferred, swww fallback)
 
 if command -v awww >/dev/null 2>&1; then

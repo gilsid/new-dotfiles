@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Start wallpaper daemon, preferring awww with swww fallback
 
 SCRIPTSDIR="$HOME/.config/hypr/scripts"

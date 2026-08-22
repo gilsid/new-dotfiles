@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 uptime="$(uptime -p | sed -e 's/up //g')"
 

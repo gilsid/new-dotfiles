@@ -1,7 +1,8 @@
 return {
-  -- 1. Gruvbox (Versi Lua Modern)
+  -- Utama (load saat startup, priority 1000) — match sistem Gruvbox Material
   {
     "ellisonleao/gruvbox.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
@@ -11,8 +12,6 @@ return {
       })
     end,
   },
-
-  -- 2. Gruvbox Material (Alternatif Retrobox Terbaik)
   {
     "sainnhe/gruvbox-material",
     lazy = false,
@@ -23,25 +22,10 @@ return {
       vim.g.gruvbox_material_transparent_background = 1
     end,
   },
-
-  -- 3. Everforest (Warm & Earthy)
-  {
-    "neanias/everforest-nvim",
-    name = "everforest",
-    priority = 1000,
-    config = function()
-      require("everforest").setup({
-        background = "hard",
-        ui_contrast = "high",
-        transparent_background = true,
-      })
-    end,
-  },
-
-  -- 4. Catppuccin (Mocha)
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
     config = function()
       require("catppuccin").setup({
@@ -50,13 +34,31 @@ return {
       })
     end,
   },
+  -- Fallback LazyVim default
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { transparent = true },
+  },
 
-  -- 5. Nord
-  { "shaunsingh/nord.nvim" },
-
-  -- 6. Kanagawa (Dragon variant)
+  -- Sisanya lazy=true — tetap bisa dipilih via <leader>th, tapi tidak load saat startup (hemat ~150ms)
+  {
+    "neanias/everforest-nvim",
+    name = "everforest",
+    lazy = true,
+    config = function()
+      require("everforest").setup({
+        background = "hard",
+        ui_contrast = "high",
+        transparent_background = true,
+      })
+    end,
+  },
+  { "shaunsingh/nord.nvim", lazy = true },
   {
     "rebelot/kanagawa.nvim",
+    lazy = true,
     config = function()
       require("kanagawa").setup({
         theme = "dragon",
@@ -65,44 +67,12 @@ return {
       })
     end,
   },
-
-  -- 7. Rose Pine
-  { "rose-pine/neovim", name = "rose-pine" },
-
-  -- 8. OneDark
-  {
-    "navarasu/onedark.nvim",
-    opts = { transparent = true },
-  },
-
-  -- 9. TokyoNight (Fallback)
-  {
-    "folke/tokyonight.nvim",
-    opts = { transparent = true },
-  },
-
-  -- 10. Nightfox
-  { "EdenEast/nightfox.nvim" },
-
-  -- 11. Cyberdream
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-
-  -- 12. Melange (Warm)
-  { "savq/melange-nvim" },
-
-  -- 13. Github Theme
-  { "projekt0n/github-nvim-theme" },
-
-  -- 14. Oxocarbon
-  { "nyoom-engineering/oxocarbon.nvim" },
-
-  -- 15. Dracula
-  {
-    "Mofiqul/dracula.nvim",
-    opts = { transparent_bg = true },
-  },
+  { "rose-pine/neovim", name = "rose-pine", lazy = true },
+  { "navarasu/onedark.nvim", opts = { transparent = true }, lazy = true },
+  { "EdenEast/nightfox.nvim", lazy = true },
+  { "scottmckendry/cyberdream.nvim", lazy = true },
+  { "savq/melange-nvim", lazy = true },
+  { "projekt0n/github-nvim-theme", lazy = true },
+  { "nyoom-engineering/oxocarbon.nvim", lazy = true },
+  { "Mofiqul/dracula.nvim", opts = { transparent_bg = true }, lazy = true },
 }

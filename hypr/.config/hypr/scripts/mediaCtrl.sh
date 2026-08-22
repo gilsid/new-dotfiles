@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Playerctl
 
 music_icon="$HOME/.config/swaync/icons/music.png"
@@ -41,7 +42,7 @@ show_music_notification() {
 }
 
 # Get media control action from command line argument
-case "$1" in
+case "${1:-}" in
 "--nxt")
   play_next
   ;;

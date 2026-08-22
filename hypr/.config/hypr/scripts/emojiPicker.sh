@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # Emoji Picker — rofi grid (5 kolom) + wl-copy
 # Cari emoji pakai nama EN atau Indonesia
 
