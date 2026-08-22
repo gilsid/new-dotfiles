@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
-# ==================================================
-#  KoolDots (2026)
-#  Project URL: https://github.com/LinuxBeginnings
-#  License: GNU GPLv3
-#  SPDX-License-Identifier: GPL-3.0-or-later
-# ==================================================
 # This script is used to play system sounds.
-# Script is used by Volume.Sh and ScreenShots.sh 
+# Script is used by volume.sh and screenShot.sh
 
 theme="freedesktop" # Set the theme for the system sounds.
 mute=false          # Set to true to mute the system sounds.

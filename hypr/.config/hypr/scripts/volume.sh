@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
-# ==================================================
-#  KoolDots (2026)
-#  Project URL: https://github.com/LinuxBeginnings
-#  License: GNU GPLv3
-#  SPDX-License-Identifier: GPL-3.0-or-later
-# ==================================================
-# Scripts for volume controls for audio and mic 
+# Scripts for volume controls for audio and mic
 
 iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
@@ -56,7 +50,7 @@ notify_user() {
         notify-send -e -h int:value:"$level" -h string:x-canonical-private-synchronous:volume_notif \
             -h boolean:SWAYNC_BYPASS_DND:true -u low -i "$(get_icon)" \
             " Volume Level:" " ${level}%" &&
-            "$sDIR/Sounds.sh" --volume
+            "$sDIR/sounds.sh" --volume
     fi
 }
 

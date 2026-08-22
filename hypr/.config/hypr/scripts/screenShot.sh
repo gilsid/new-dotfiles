@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-# ==================================================
-#  KoolDots (2026)
-#  Project URL: https://github.com/LinuxBeginnings
-#  License: GNU GPLv3
-#  SPDX-License-Identifier: GPL-3.0-or-later
-# ==================================================
 # Screenshots scripts
 
 # variables
@@ -30,7 +24,7 @@ notify_cmd_NOT="notify-send -u low -i ${iDoR}/note.png "
 notify_view() {
     if [[ "$1" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
-			"${sDIR}/Sounds.sh" --screenshot >/dev/null 2>&1 &       
+			"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
             resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
             case "$resp" in
 				action1)
@@ -42,11 +36,11 @@ notify_view() {
 			esac
         else
             ${notify_cmd_NOT} " Screenshot of:" " ${active_window_class} NOT Saved."
-            "${sDIR}/Sounds.sh" --error >/dev/null 2>&1 &
+            "${sDIR}/sounds.sh" --error >/dev/null 2>&1 &
         fi
 
     elif [[ "$1" == "swappy" ]]; then
-		"${sDIR}/Sounds.sh" --screenshot >/dev/null 2>&1 &
+		"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
 		resp=$(${notify_cmd_shot} " Screenshot:" " Captured by Swappy")
 		case "$resp" in
 			action1)
@@ -60,7 +54,7 @@ notify_view() {
     else
         local check_file="${dir}/${file}"
         if [[ -e "$check_file" ]]; then
-            "${sDIR}/Sounds.sh" --screenshot >/dev/null 2>&1 &
+            "${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
             resp=$(timeout 5 ${notify_cmd_shot} " Screenshot" " Saved")
 			case "$resp" in
 				action1)
@@ -72,7 +66,7 @@ notify_view() {
 			esac
         else
             ${notify_cmd_NOT} " Screenshot" " NOT Saved"
-            "${sDIR}/Sounds.sh" --error >/dev/null 2>&1 &
+            "${sDIR}/sounds.sh" --error >/dev/null 2>&1 &
         fi
     fi
 }

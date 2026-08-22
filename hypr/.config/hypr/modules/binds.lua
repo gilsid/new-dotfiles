@@ -15,12 +15,12 @@ end
 -------------------------
 hl.bind(mainMod .. " + Return", run(term))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + Q", run(sDir .. "/KillActiveProcess.sh"))
+hl.bind(mainMod .. " + SHIFT + Q", run(sDir .. "/killActiveProcess.sh"))
 hl.bind(mainMod .. " + B", run(browser))
 hl.bind(mainMod .. " + A", run(menu))
 hl.bind(mainMod .. " + E", run(files))
-hl.bind(mainMod .. " + V", run(sDir .. "/ClipManager.sh"))
-hl.bind(mainMod .. " + SHIFT + E", run(sDir .. "/EmojiPicker.sh"))
+hl.bind(mainMod .. " + V", run(sDir .. "/clipManager.sh"))
+hl.bind(mainMod .. " + SHIFT + E", run(sDir .. "/emojiPicker.sh"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
@@ -42,14 +42,14 @@ hl.bind(mainMod .. " + U", hl.dsp.layout("togglesplit"))
 -------------------------
 --- MEDIA / HARDWARE ----
 -------------------------
-hl.bind("XF86AudioRaiseVolume", run(sDir .. "/Volume.sh --inc"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", run(sDir .. "/Volume.sh --dec"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", run(sDir .. "/Volume.sh --toggle"), { locked = true })
-hl.bind("XF86AudioMicMute", run(sDir .. "/Volume.sh --toggle-mic"), { locked = true })
-hl.bind("XF86AudioPlay", run(sDir .. "/MediaCtrl.sh --pause"), { locked = true })
-hl.bind("XF86AudioPause", run(sDir .. "/MediaCtrl.sh --pause"), { locked = true })
-hl.bind("XF86AudioNext", run(sDir .. "/MediaCtrl.sh --nxt"), { locked = true })
-hl.bind("XF86AudioPrev", run(sDir .. "/MediaCtrl.sh --prv"), { locked = true })
+hl.bind("XF86AudioRaiseVolume", run(sDir .. "/volume.sh --inc"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", run(sDir .. "/volume.sh --dec"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", run(sDir .. "/volume.sh --toggle"), { locked = true })
+hl.bind("XF86AudioMicMute", run(sDir .. "/volume.sh --toggle-mic"), { locked = true })
+hl.bind("XF86AudioPlay", run(sDir .. "/mediaCtrl.sh --pause"), { locked = true })
+hl.bind("XF86AudioPause", run(sDir .. "/mediaCtrl.sh --pause"), { locked = true })
+hl.bind("XF86AudioNext", run(sDir .. "/mediaCtrl.sh --nxt"), { locked = true })
+hl.bind("XF86AudioPrev", run(sDir .. "/mediaCtrl.sh --prv"), { locked = true })
 hl.bind("XF86MonBrightnessUp", run("brightnessctl set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", run("brightnessctl set 5%-"), { locked = true, repeating = true })
 
@@ -116,22 +116,22 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 -------------------------
 --- SCREEN ZOOM ---
 -------------------------
-hl.bind(mainMod .. " + SHIFT + mouse_up",   run(sDir .. "/Zoom.sh --inc"))
-hl.bind(mainMod .. " + SHIFT + mouse_down", run(sDir .. "/Zoom.sh --dec"))
-hl.bind(mainMod .. " + SHIFT + Z",          run(sDir .. "/Zoom.sh --reset"))
+hl.bind(mainMod .. " + SHIFT + mouse_up",   run(sDir .. "/zoom.sh --inc"))
+hl.bind(mainMod .. " + SHIFT + mouse_down", run(sDir .. "/zoom.sh --dec"))
+hl.bind(mainMod .. " + SHIFT + Z",          run(sDir .. "/zoom.sh --reset"))
 
 -------------------------
 --- SCREENSHOT ---
 -------------------------
-hl.bind("Print",         run(sDir .. "/ScreenShot.sh --now"), { locked = true })
-hl.bind("SHIFT + Print", run(sDir .. "/ScreenShot.sh --area"), { locked = true })
-hl.bind(mainMod .. " + Print",     run(sDir .. "/ScreenShot.sh --now"))
-hl.bind(mainMod .. " + SHIFT + Print", run(sDir .. "/ScreenShot.sh --area"))
+hl.bind("Print",         run(sDir .. "/screenShot.sh --now"), { locked = true })
+hl.bind("SHIFT + Print", run(sDir .. "/screenShot.sh --area"), { locked = true })
+hl.bind(mainMod .. " + Print",     run(sDir .. "/screenShot.sh --now"))
+hl.bind(mainMod .. " + SHIFT + Print", run(sDir .. "/screenShot.sh --area"))
 
 -------------------------
 --- SYSTEM ---
 -------------------------
-hl.bind(mainMod .. " + P", run(sDir .. "/powermenu.sh"))
-hl.bind("CTRL + ALT + L", run(sDir .. "/LockScreen.sh"))
+hl.bind(mainMod .. " + P", run(sDir .. "/powerMenu.sh"))
+hl.bind("CTRL + ALT + L", run(sDir .. "/lockScreen.sh"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
-hl.bind(mainMod .. " + W", run(sDir .. "/wallpaper_picker.sh"))
+hl.bind(mainMod .. " + W", run(sDir .. "/wallpaperPicker.sh"))
