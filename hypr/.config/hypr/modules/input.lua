@@ -25,6 +25,14 @@ hl.config({
     },
 })
 
+hl.config({
+    cursor = {
+        -- software cursors render correctly while zoomed,
+        -- hardware ones flicker / stay unscaled
+        no_hardware_cursors = true,
+    },
+})
+
 hl.gesture({
     fingers = 3,
     direction = "horizontal",

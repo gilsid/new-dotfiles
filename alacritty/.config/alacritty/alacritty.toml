@@ -19,7 +19,7 @@ style = "Bold"
 # ===============================
 [window]
 decorations = "none"
-opacity = 0.95  # Sedikit lebih solid biar teks tidak burem
+opacity = 0.75
 
 [window.padding]
 x = 0

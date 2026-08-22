@@ -114,6 +114,13 @@ hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -------------------------
+--- SCREEN ZOOM ---
+-------------------------
+hl.bind(mainMod .. " + SHIFT + mouse_up",   run(sDir .. "/Zoom.sh --inc"))
+hl.bind(mainMod .. " + SHIFT + mouse_down", run(sDir .. "/Zoom.sh --dec"))
+hl.bind(mainMod .. " + SHIFT + Z",          run(sDir .. "/Zoom.sh --reset"))
+
+-------------------------
 --- SCREENSHOT ---
 -------------------------
 hl.bind("Print",         run(sDir .. "/ScreenShot.sh --now"), { locked = true })
