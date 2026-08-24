@@ -35,14 +35,12 @@ alias v='nvim'
 alias s='paru -Ss'
 # Alias for RTK Antigravity
 alias ag='rtk init --agent antigravity'
-# 9 router alias
-alias start9router="source $HOME/env-penting/.env9router && 9router"
 
 # VI MODE
 bindkey -v
 # FZF — guard biar tidak error jika fzf belum install, eval lebih portabel dari source <(...)
 if command -v fzf >/dev/null 2>&1; then
-  eval "$(fzf --zsh)"
+	eval "$(fzf --zsh)"
 fi
 fzf-files() {
 	local file
@@ -94,13 +92,13 @@ export VISUAL=nvim
 # PATH — deduplicate, biar tidak dobel tiap source ~/.zshrc
 typeset -U path PATH
 path=(
-  "$HOME/.local/bin"
-  "$HOME/.bun/bin"
-  "$HOME/develop/flutter/bin"
-  "$HOME/.config/emacs/bin"
-  "$HOME/.npm-global/bin"
-  "$HOME/.config/composer/vendor/bin"
-  $path
+	"$HOME/.local/bin"
+	"$HOME/.bun/bin"
+	"$HOME/develop/flutter/bin"
+	"$HOME/.config/emacs/bin"
+	"$HOME/.npm-global/bin"
+	"$HOME/.config/composer/vendor/bin"
+	$path
 )
 export PATH
 # NODE_PATH => KHUSUS untuk Claude/agent (skill /docx), bukan untuk dipakai manual.
