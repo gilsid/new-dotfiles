@@ -35,6 +35,8 @@ alias v='nvim'
 alias s='paru -Ss'
 # Alias for RTK Antigravity
 alias ag='rtk init --agent antigravity'
+# Alias for opencode YOLO 
+alias oc='opencode --yolo'
 
 # VI MODE
 bindkey -v

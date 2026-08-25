@@ -5,8 +5,8 @@ adjust-cell-height = 10%
 window-theme = dark
 window-height = 32
 window-width = 110
-background-opacity = 1.0
-background-blur-radius = 60
+background-opacity = 0.75
+background-blur = 60
 cursor-style = bar
 
 # keybindings
