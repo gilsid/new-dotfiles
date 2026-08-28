@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Screenshots scripts
 
-# variables
 time=$(date "+%d-%b_%H-%M-%S")
 PICTURES_DIR="$(xdg-user-dir PICTURES 2>/dev/null || echo "$HOME/Pictures")"
 dir="$PICTURES_DIR/Screenshots"
@@ -21,7 +19,6 @@ notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/picture.png "
 notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/picture.png "
 notify_cmd_NOT="notify-send -u low -i ${iDoR}/note.png "
 
-# notify and view screenshot
 notify_view() {
     if [[ "${1:-}" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
@@ -72,7 +69,6 @@ notify_view() {
     fi
 }
 
-# countdown
 countdown() {
 	for sec in $(seq $1 -1 1); do
 		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png  " Taking shot" " in: $sec secs"
@@ -80,7 +76,6 @@ countdown() {
 	done
 }
 
-# take shots
 shotnow() {
 	cd ${dir} && grim - | tee "$file" | wl-copy
 	notify_view

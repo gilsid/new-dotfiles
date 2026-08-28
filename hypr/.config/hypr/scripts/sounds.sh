@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# This script is used to play system sounds.
 # Script is used by volume.sh and screenShot.sh
 
-theme="freedesktop" # Set the theme for the system sounds.
-mute=false          # Set to true to mute the system sounds.
+theme="freedesktop"
+mute=false
 directSoundDir="$HOME/.config/hypr/sounds"
 
-# Mute individual sounds here.
 muteScreenshots=false
 muteVolume=false
 
-# Exit if the system sounds are muted.
 if [[ "$mute" = true ]]; then
     exit 0
 fi
 
-# Choose the sound to play.
 if [[ "${1:-}" == "--screenshot" ]]; then
     if [[ "$muteScreenshots" = true ]]; then
         exit 0
@@ -40,7 +36,6 @@ else
     exit 0
 fi
 
-# Set the directory defaults for system sounds.
 if [ -d "/run/current-system/sw/share/sounds" ]; then
     systemDIR="/run/current-system/sw/share/sounds" # NixOS
 else
@@ -57,7 +52,6 @@ elif [ -d "$systemDIR/$theme" ]; then
     sDIR="$systemDIR/$theme"
 fi
 
-# Get the theme that it inherits.
 iTheme=$(cat "$sDIR/index.theme" | grep -i "inherits" | cut -d "=" -f 2)
 iDIR="$sDIR/../$iTheme"
 
@@ -84,7 +78,6 @@ if [[ -n "$directSound" && -f "$directSound" ]]; then
     play_sound "$directSound"
 fi
 
-# Find the sound file and play it.
 sound_file=$(find -L $sDIR/stereo -name "$soundoption" -print -quit)
 if ! test -f "$sound_file"; then
     sound_file=$(find -L $iDIR/stereo -name "$soundoption" -print -quit)
@@ -99,5 +92,4 @@ if ! test -f "$sound_file"; then
         fi
     fi
 fi
-# Play the sound (background for quick return).
 play_sound "$sound_file"

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# This script starts the first available Polkit agent from a list of possible locations
 # Avoid duplicate agents (common with UWSM/session autostart)
 if pgrep -u "$UID" -f 'xfce-polkit|polkit-gnome-authentication-agent-1|polkit-kde-authentication-agent-1|polkit-mate-authentication-agent-1|mate-polkit|hyprpolkitagent' >/dev/null 2>&1; then
   echo "Polkit agent already running. Skipping start."
@@ -17,9 +16,7 @@ if [ -z "${QT_QUICK_CONTROLS_STYLE:-}" ]; then
   export QT_QUICK_CONTROLS_STYLE=Basic
 fi
 
-# Check if kvantum is specified globally but the QML module is missing
 if [[ "${QT_STYLE_OVERRIDE:-}" == "kvantum" ]] || [[ "${QT_STYLE_OVERRIDE:-}" == "kvantum-dark" ]]; then
-  # Check common Qt5/Qt6 QML directories for the Kvantum module
   if ! find /usr/lib /usr/lib64 /usr/share -type d -path "*/qml/*/kvantum" -print -quit 2>/dev/null | grep -q .; then
     echo "Kvantum QML module not found. Overriding QT_STYLE_OVERRIDE for Polkit to prevent crash."
     export QT_STYLE_OVERRIDE=Fusion
@@ -28,7 +25,6 @@ elif [ -z "${QT_STYLE_OVERRIDE:-}" ]; then
   export QT_STYLE_OVERRIDE=Fusion
 fi
 
-# List of potential Polkit agent file paths (preferred order)
 polkit=(
   "/usr/libexec/hyprpolkitagent"
   "/usr/lib/hyprpolkitagent"
@@ -49,7 +45,6 @@ polkit=(
 
 executed=false
 
-# Loop through the list of paths
 for file in "${polkit[@]}"; do
   if [ -e "$file" ] && [ ! -d "$file" ]; then
     echo "Found: $file — executing..."
@@ -59,7 +54,6 @@ for file in "${polkit[@]}"; do
   fi
 done
 
-# Fallback message if nothing executed
 if [ "$executed" == false ]; then
   echo "No valid Polkit agent found. Please install one."
 fi

@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Copied from Discord post. Thanks to @Zorg
-
-
-# Get id of an active window
 active_pid=$(hyprctl activewindow | grep -o 'pid: [0-9]*' | cut -d' ' -f2)
 
 if [[ -z "$active_pid" || ! "$active_pid" =~ ^[0-9]+$ ]]; then
@@ -12,5 +8,4 @@ if [[ -z "$active_pid" || ! "$active_pid" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
-# Close active window
 kill "$active_pid"
