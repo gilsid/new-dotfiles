@@ -17,7 +17,7 @@
     ],
     "modules-right": [
         "backlight",
-        "pulseaudio",
+        "group/audio",
         "battery",
         "custom/idle"
     ],
@@ -57,18 +57,33 @@
         "on-scroll-up": "brightnessctl set 5%+",
         "on-scroll-down": "brightnessctl set 5%-"
     },
-    "pulseaudio": {
-        "format": "{icon} {volume}%  {format_source}",
-        "format-muted": "󰝟 mute  {format_source}",
-        "format-source": "󰍬 {volume}%",
-        "format-source-muted": "󰍭 mute",
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#audio",
+            "pulseaudio#mic"
+        ]
+    },
+    "pulseaudio#audio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 mute",
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"],
             "headphone": "󰋋"
         },
         "tooltip-format": "{desc}: {volume}%",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "pulseaudio#mic": {
+        "format": "{format_source}",
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 mute",
+        "tooltip-format": "{desc}: {volume}%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "battery": {
         "bat": "BAT0",

@@ -90,12 +90,25 @@ window#waybar {
     color: @bg0;
 }
 
-#pulseaudio {
+/* pill audio: group pegang background, isi (speaker + mic) transparan biar kelihatan satu pill.
+   note: selector group "group/audio" itu #audio, prefix "group/"-nya di-drop */
+#audio {
     padding: 1px 10px;
     margin: 6px 0;
     border-radius: 99px;
     background-color: @blue;
     color: @bg0;
+}
+
+#pulseaudio.audio,
+#pulseaudio.mic {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#pulseaudio.mic {
+    padding-left: 7px;
 }
 
 #custom-idle {
