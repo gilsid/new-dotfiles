@@ -1,0 +1,24 @@
+# Catppuccin Mocha — mirror rofi/themes/catppuccin.rasi
+background-color=#1e1e2eF2
+text-color=#cdd6f4FF
+border-color=#89b4faFF
+progress-color=over #89b4faFF
+
+[urgency=low]
+background-color=#313244F2
+text-color=#cdd6f4FF
+border-color=#6c7086FF
+progress-color=over #6c7086FF
+
+[urgency=normal]
+background-color=#1e1e2eF2
+text-color=#cdd6f4FF
+border-color=#89b4faFF
+progress-color=over #89b4faFF
+
+[urgency=critical]
+background-color=#1e1e2eFF
+text-color=#cdd6f4FF
+border-color=#f38ba8FF
+progress-color=over #f38ba8FF
+default-timeout=0

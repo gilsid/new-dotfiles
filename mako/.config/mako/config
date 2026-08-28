@@ -1,0 +1,62 @@
+# mako config — gruvbox-material, rounded tipis (8-10px), layout konsisten dengan waybar/rofi
+# colors di-load dari themes/ biar gampang gonta-ganti: cukup ubah `include=` di bawah
+# docs: man 5 mako
+
+# ── theme ──────────────────────────────────────────────────────────
+# ganti ke themes/catppuccin dll untuk switch theme
+include=~/.config/mako/themes/gruvbox-material
+
+# ── layout & behaviour ─────────────────────────────────────────────
+font=JetBrainsMono Nerd Font 10
+width=380
+height=180
+outer-margin=8
+margin=8
+padding=12
+border-size=2
+border-radius=10
+icons=0
+max-icon-size=32
+icon-border-radius=0
+icon-location=left
+markup=1
+actions=1
+history=1
+max-history=20
+max-visible=5
+sort=-time
+layer=top
+anchor=top-right
+output=
+default-timeout=5000
+ignore-timeout=0
+group-by=
+text-alignment=left
+format=<b>%s</b>\n%b
+
+# progress bar (volume/brightness) — script pakai hint `value: 0-100`
+progress-color=over #7daea3FF
+
+# ── bindings — simple dismiss (screenshot no action) ───────────────
+on-button-left=dismiss
+on-button-middle=dismiss
+on-button-right=dismiss-all
+on-touch=dismiss
+
+# ── DND mode ───────────────────────────────────────────────────────
+# toggle via: makoctl mode -a do-not-disturb  /  makoctl mode -r do-not-disturb
+[mode=do-not-disturb]
+invisible=1
+
+# ── grouping — angka di kanan biar title gak geser ─────────────────
+[grouped]
+format=<b>%s</b> <span alpha="60">(%g)</span>\n%b
+
+[group-index=0]
+format=<b>%s</b> <span alpha="60">(%g)</span>\n%b
+
+# placeholder kalau >max-visible (5) — center biar simetris
+[hidden]
+format=<span alpha="70">— %h more —</span>
+text-alignment=center
+text-color=#928374FF

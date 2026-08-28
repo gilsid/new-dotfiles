@@ -1,0 +1,30 @@
+# Gruvbox Material Dark — mirror waybar/colors/gruvbox-material.css + rofi/themes/gruvbox-material-dark.rasi
+# Ganti file ini untuk gonta-ganti warna. Di ../config tinggal ubah `include=` line.
+
+background-color=#282828F2
+text-color=#d4be98FF
+border-color=#7daea3FF
+progress-color=over #7daea3FF
+
+# low: lebih pudar, border grey
+[urgency=low]
+background-color=#32302fF2
+text-color=#d4be98FF
+border-color=#928374FF
+progress-color=over #928374FF
+
+# normal: default (inherit dari global), explicit biar jelas
+[urgency=normal]
+background-color=#282828F2
+text-color=#d4be98FF
+border-color=#7daea3FF
+progress-color=over #7daea3FF
+
+# critical: border merah, bg sedikit lebih solid biar standout
+[urgency=critical]
+background-color=#282828FF
+text-color=#d4be98FF
+border-color=#ea6962FF
+progress-color=over #ea6962FF
+default-timeout=0
+ignore-timeout=0

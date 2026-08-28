@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-music_icon="$HOME/.config/swaync/icons/music.png"
+# Nerd icons: 󰎆 music, 󰐊 play, 󰏤 pause, 󰓛 stop
 
 play_next() {
   playerctl next
@@ -21,17 +21,17 @@ toggle_play_pause() {
 
 stop_playback() {
   playerctl stop
-  notify-send -e -u low -i $music_icon " Playback:" " Stopped"
+  notify-send -e -u low " 󰓛 Playback" "Stopped"
 }
 
 show_music_notification() {
-  status=$(playerctl status)
+  status=$(playerctl status 2>/dev/null || echo "Stopped")
   if [[ "$status" == "Playing" ]]; then
-    song_title=$(playerctl metadata title)
-    song_artist=$(playerctl metadata artist)
-    notify-send -e -u low -i $music_icon "Now Playing:" "$song_title by $song_artist"
+    song_title=$(playerctl metadata title 2>/dev/null || echo "Unknown")
+    song_artist=$(playerctl metadata artist 2>/dev/null || echo "Unknown")
+    notify-send -e -u low " 󰎆 Now Playing" "$song_title — $song_artist"
   elif [[ "$status" == "Paused" ]]; then
-    notify-send -e -u low -i $music_icon " Playback:" " Paused"
+    notify-send -e -u low " 󰏤 Playback" "Paused"
   fi
 }
 

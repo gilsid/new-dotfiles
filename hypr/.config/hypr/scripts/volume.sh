@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
+
+# Nerd Font icons (JetBrainsMono Nerd Font) — no png needed, match waybar
+# sink: 󰕿 low 󰖀 mid 󰕾 high 󰝟 mute
+# mic : 󰍬 on  󰍭 muted
 
 get_volume() {
     if [[ "$(pamixer --get-mute)" == "true" ]]; then
@@ -21,33 +24,33 @@ get_volume() {
 
 get_icon() {
     if [[ "$(pamixer --get-mute)" == "true" ]]; then
-        echo "$iDIR/volume-mute.png"
+        echo "󰝟"
         return
     fi
 
     current=$(pamixer --get-volume)
     if [[ "$current" -le 30 ]]; then
-        echo "$iDIR/volume-low.png"
+        echo "󰕿"
     elif [[ "$current" -le 60 ]]; then
-        echo "$iDIR/volume-mid.png"
+        echo "󰖀"
     else
-        echo "$iDIR/volume-high.png"
+        echo "󰕾"
     fi
 }
 
 notify_user() {
     local muted="$(pamixer --get-mute)"
     local level="$(pamixer --get-volume)"
+    local icon
+    icon="$(get_icon)"
 
     if [[ "$muted" == "true" || "$level" -eq 0 ]]; then
         notify-send -e -h string:x-canonical-private-synchronous:volume_notif \
-            -h boolean:SWAYNC_BYPASS_DND:true -u low -i "$(get_icon)" \
-            " Volume:" " Muted"
+            -u low " $icon Muted"
     else
         notify-send -e -h int:value:"$level" -h string:x-canonical-private-synchronous:volume_notif \
-            -h boolean:SWAYNC_BYPASS_DND:true -u low -i "$(get_icon)" \
-            " Volume Level:" " ${level}%" &&
-            "$sDIR/sounds.sh" --volume
+            -u low " $icon Volume" " ${level}%"
+        "$sDIR/sounds.sh" --volume 2>/dev/null &
     fi
 }
 
@@ -68,28 +71,28 @@ dec_volume() {
 }
 
 toggle_mute() {
-	if [ "$(pamixer --get-mute)" == "false" ]; then
-		pamixer -m && notify-send -e -u low -h boolean:SWAYNC_BYPASS_DND:true -i "$iDIR/volume-mute.png" " Mute"
-	elif [ "$(pamixer --get-mute)" == "true" ]; then
-		pamixer -u && notify-send -e -u low -h boolean:SWAYNC_BYPASS_DND:true -i "$(get_icon)" " Volume:" " Switched ON"
-	fi
+    if [ "$(pamixer --get-mute)" == "false" ]; then
+        pamixer -m && notify-send -e -u low " 󰝟 Mute"
+    elif [ "$(pamixer --get-mute)" == "true" ]; then
+        pamixer -u && notify-send -e -u low " $(get_icon) Volume" "Unmuted"
+    fi
 }
 
 toggle_mic() {
-	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-		pamixer --default-source -m && notify-send -e -u low -h boolean:SWAYNC_BYPASS_DND:true -i "$iDIR/microphone-mute.png" " Microphone:" " Switched OFF"
-	elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-		pamixer --default-source -u && notify-send -e -u low -h boolean:SWAYNC_BYPASS_DND:true -i "$iDIR/microphone.png" " Microphone:" " Switched ON"
-	fi
+    if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
+        pamixer --default-source -m && notify-send -e -u low " 󰍭 Microphone" "Muted"
+    elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
+        pamixer --default-source -u && notify-send -e -u low " 󰍬 Microphone" "Unmuted"
+    fi
 }
 
 get_mic_icon() {
     local muted="$(pamixer --default-source --get-mute)"
     local current="$(pamixer --default-source --get-volume)"
     if [[ "$muted" == "true" || "$current" -eq "0" ]]; then
-        echo "$iDIR/microphone-mute.png"
+        echo "󰍭"
     else
-        echo "$iDIR/microphone.png"
+        echo "󰍬"
     fi
 }
 
@@ -111,18 +114,16 @@ get_mic_volume() {
 notify_mic_user() {
     local muted="$(pamixer --default-source --get-mute)"
     local level="$(pamixer --default-source --get-volume)"
-    local icon message
+    local icon
 
     if [[ "$muted" == "true" || "$level" -eq 0 ]]; then
-        icon="$iDIR/microphone-mute.png"
+        icon="󰍭"
         notify-send -e -h "string:x-canonical-private-synchronous:volume_notif" \
-            -h boolean:SWAYNC_BYPASS_DND:true -u low -i "$icon" \
-            " Mic Level:" " Muted"
+            -u low " $icon Mic" "Muted"
     else
-        icon="$iDIR/microphone.png"
+        icon="󰍬"
         notify-send -e -h int:value:"$level" -h "string:x-canonical-private-synchronous:volume_notif" \
-            -h boolean:SWAYNC_BYPASS_DND:true -u low -i "$icon" \
-            " Mic Level:" " ${level}%"
+            -u low " $icon Mic" " ${level}%"
     fi
 }
 

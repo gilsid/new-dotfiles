@@ -6,64 +6,38 @@ PICTURES_DIR="$(xdg-user-dir PICTURES 2>/dev/null || echo "$HOME/Pictures")"
 dir="$PICTURES_DIR/Screenshots"
 file="Screenshot_${time}_${RANDOM}.png"
 
-iDIR="$HOME/.config/swaync/icons"
-iDoR="$HOME/.config/swaync/images"
 sDIR="$HOME/.config/hypr/scripts"
 
 active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
 active_window_file="Screenshot_${time}_${active_window_class}.png"
 active_window_path="${dir}/${active_window_file}"
 
-notify_cmd_base="notify-send -t 10000 -A action1=Open -A action2=Delete -h string:x-canonical-private-synchronous:shot-notify"
-notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/picture.png "
-notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/picture.png "
-notify_cmd_NOT="notify-send -u low -i ${iDoR}/note.png "
+# Nerd icons: 󰹑 screenshot, 󰔟 timer, 󰀪 error
+# No click actions — plain notify, no Open/Delete
 
 notify_view() {
     if [[ "${1:-}" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
 			"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
-            resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
-            case "$resp" in
-				action1)
-					xdg-open "${active_window_path}" &
-					;;
-				action2)
-					rm "${active_window_path}" &
-					;;
-			esac
+            notify-send -t 5000 -h string:x-canonical-private-synchronous:shot-notify " 󰹑 Screenshot" " ${active_window_class} saved → ${active_window_path}"
         else
-            ${notify_cmd_NOT} " Screenshot of:" " ${active_window_class} NOT Saved."
+            notify-send -u low " 󰀪 Screenshot" " ${active_window_class} NOT saved"
             "${sDIR}/sounds.sh" --error >/dev/null 2>&1 &
         fi
 
     elif [[ "${1:-}" == "swappy" ]]; then
 		"${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
-		resp=$(${notify_cmd_shot} " Screenshot:" " Captured by Swappy")
-		case "$resp" in
-			action1)
-				swappy -f - <"$tmpfile"
-				;;
-			action2)
-				rm "$tmpfile"
-				;;
-		esac
+		notify-send -t 5000 -h string:x-canonical-private-synchronous:shot-notify " 󰹑 Screenshot" "Captured — copied to clipboard"
+		# optional: auto open swappy if wanted
+		# swappy -f - <"$tmpfile" &
 
     else
         local check_file="${dir}/${file}"
         if [[ -e "$check_file" ]]; then
             "${sDIR}/sounds.sh" --screenshot >/dev/null 2>&1 &
-            resp=$(timeout 5 ${notify_cmd_shot} " Screenshot" " Saved")
-			case "$resp" in
-				action1)
-					xdg-open "${check_file}" &
-					;;
-				action2)
-					rm "${check_file}" &
-					;;
-			esac
+            notify-send -t 5000 -h string:x-canonical-private-synchronous:shot-notify " 󰹑 Screenshot" "Saved → ${check_file}"
         else
-            ${notify_cmd_NOT} " Screenshot" " NOT Saved"
+            notify-send -u low " 󰀪 Screenshot" "NOT saved"
             "${sDIR}/sounds.sh" --error >/dev/null 2>&1 &
         fi
     fi
@@ -71,7 +45,7 @@ notify_view() {
 
 countdown() {
 	for sec in $(seq $1 -1 1); do
-		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png  " Taking shot" " in: $sec secs"
+		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 " 󰔟 Taking shot" "in $sec secs"
 		sleep 1
 	done
 }

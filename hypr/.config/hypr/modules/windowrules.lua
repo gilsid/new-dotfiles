@@ -127,11 +127,6 @@ hl.window_rule({ name = "idle-inhibit", match = { fullscreen = true }, idle_inhi
 
 -- Layer rules
 hl.layer_rule({
-	name = "notification-animations-swaync",
-	match = { namespace = "swaync-control-center" },
-	animation = "slide top",
-})
-hl.layer_rule({
 	name = "notification-animations-rofi",
 	match = { namespace = "rofi" },
 	animation = "slide top",
@@ -139,12 +134,6 @@ hl.layer_rule({
 	ignore_alpha = 1,
 })
 
--- Swaync notification window
-hl.layer_rule({
-	match = { namespace = "swaync-notification-window" },
-	no_anim = false,
-	order = 67,
-})
 
 -- [[ Workspace assignments (uncomment as needed) ]]
 hl.window_rule({ name = "ws1-browser", match = { tag = "browser" }, workspace = "1" })
