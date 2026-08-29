@@ -19,7 +19,7 @@
 (map! :leader
       (:prefix ("o" . "open here")
        ;; :desc "Open eshell here"    "e" #'+eshell/here
-       :desc "Open ghostel here"   "v" #'ghostel-project))
+       :desc "Open ghostel here"   "v" #'ghostel))
 
 (custom-set-faces
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
@@ -56,6 +56,7 @@
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode) ;; Set display line numbers to relative
+(add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1))) ;; no line numbers in eshell
 (setq-default compile-command "") ;; Set default compile-command to empty
 (setq confirm-kill-emacs nil)        ;; Don't confirm on exit
 (setq bookmark-save-flag 1)
@@ -74,6 +75,12 @@
   :after (ghostel evil)
   :hook (ghostel-mode . evil-ghostel-mode))
 
+(add-hook 'ghostel-mode-hook (lambda () (display-line-numbers-mode -1))) ;; ghostel + claude (ghostel backend) no line numbers
+
+(map! :leader
+      :desc "OpenCode"
+      "o o" #'opencode)
+
 (after! opencode
  ;; Buka OpenCode di window saat ini, bukan popup di bawah.
  (defun cstm/opencode-open-project-same-window (orig-fn directory)
@@ -85,9 +92,8 @@
              :around
              #'cstm/opencode-open-project-same-window)
 
- (map! :leader
-       :desc "OpenCode"
-       "o o" #'opencode))
+ (add-hook 'opencode-session-mode-hook (lambda () (display-line-numbers-mode -1)))
+ (add-hook 'opencode-session-control-mode-hook (lambda () (display-line-numbers-mode -1)))) ;; chat + session list
 
 (after! jsonc-mode
   (add-to-list 'auto-mode-alist
