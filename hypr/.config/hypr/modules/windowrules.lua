@@ -17,41 +17,22 @@ hl.window_rule({
 })
 
 -- Browser tagging
-hl.window_rule({
-	name = "tag-browser-firefox",
-	match = { class = "^([Ff]irefox|org.mozilla.firefox)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-zen",
-	match = { class = "^(zen-alpha|zen)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-chrome",
-	match = { class = "^([Gg]oogle-chrome(-beta|-dev)?)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-chromium",
-	match = { class = "^([Cc]hromium)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-brave",
-	match = { class = "^([Bb]rave-browser(-beta|-dev)?)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-edge",
-	match = { class = "^([Mm]icrosoft-edge-stable)$" },
-	tag = "+browser",
-})
-hl.window_rule({
-	name = "tag-browser-floorp",
-	match = { class = "^([Ff]loorp)$" },
-	tag = "+browser",
-})
+local browsers = {
+	{ name = "firefox", pattern = "^([Ff]irefox|org.mozilla.firefox)$" },
+	{ name = "zen", pattern = "^(zen-alpha|zen)$" },
+	{ name = "chrome", pattern = "^([Gg]oogle-chrome(-beta|-dev)?)$" },
+	{ name = "chromium", pattern = "^([Cc]hromium)$" },
+	{ name = "brave", pattern = ".*[Bb]rave.*" },
+	{ name = "edge", pattern = "^([Mm]icrosoft-edge-stable)$" },
+	{ name = "floorp", pattern = "^([Ff]loorp)$" },
+}
+for _, b in ipairs(browsers) do
+	hl.window_rule({
+		name = "tag-browser-" .. b.name,
+		match = { class = b.pattern },
+		tag = "+browser",
+	})
+end
 
 -- Code tagg
 hl.window_rule({ name = "tag-code", match = { class = "^(antigravity|antigravity-ide|code|t3code|)$" }, tag = "+code" })
