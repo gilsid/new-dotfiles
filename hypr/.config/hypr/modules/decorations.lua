@@ -3,10 +3,6 @@ hl.config({
         gaps_in  = 3,
         gaps_out = 8,
         border_size = 1,
-        col = {
-            active_border   = { colors = {"rgba(33ccffee)"} },
-            inactive_border = "rgba(595959aa)",
-        },
         resize_on_border = false,
         allow_tearing = false,
     },
@@ -29,10 +25,13 @@ hl.config({
         },
     },
 })
+-- Re-apply matugen cache
+hl.on("config.reloaded", function()
+    hl.exec_cmd("bash " .. os.getenv("HOME") .. "/.cache/matugen/hyprland-borders.sh")
+end)
 
-----------------------------
---- HYDE optimized anim ---
-----------------------------
+
+-- Animation
 hl.curve("wind",             { type = "bezier", points = { {0.05, 0.85}, {0.03, 0.97} } })
 hl.curve("winIn",            { type = "bezier", points = { {0.07, 0.88}, {0.04, 0.99} } })
 hl.curve("winOut",           { type = "bezier", points = { {0.20, -0.15}, {0, 1} } })
