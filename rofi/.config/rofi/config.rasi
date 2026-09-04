@@ -176,25 +176,37 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px 10px;
+    padding:                     8px 12px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               12px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
+    background-color:            transparent;
+    text-color:                  var(normal-foreground);
+}
+element alternate.normal {
+    background-color:            transparent;
     text-color:                  var(normal-foreground);
 }
 element normal.urgent {
-    background-color:            var(urgent-background);
-    text-color:                  var(urgent-foreground);
+    background-color:            transparent;
+    text-color:                  var(urgent);
+}
+element alternate.urgent {
+    background-color:            transparent;
+    text-color:                  var(urgent);
 }
 element normal.active {
-    background-color:            var(active-background);
-    text-color:                  var(active-foreground);
+    background-color:            transparent;
+    text-color:                  var(active);
+}
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  var(active);
 }
 element selected.normal {
     background-color:            var(selected-normal-background);
@@ -207,18 +219,6 @@ element selected.urgent {
 element selected.active {
     background-color:            var(selected-active-background);
     text-color:                  var(selected-active-foreground);
-}
-element alternate.normal {
-    background-color:            var(alternate-normal-background);
-    text-color:                  var(alternate-normal-foreground);
-}
-element alternate.urgent {
-    background-color:            var(alternate-urgent-background);
-    text-color:                  var(alternate-urgent-foreground);
-}
-element alternate.active {
-    background-color:            var(alternate-active-background);
-    text-color:                  var(alternate-active-foreground);
 }
 element-icon {
     background-color:            transparent;

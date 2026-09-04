@@ -1,19 +1,19 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
-# Agnoster Theme - Catppuccin Macchiato Version (With Full Date & Time)
+# Agnoster Theme - Gruvbox Material Dark
 
-### Catppuccin Macchiato Colors (256-color palette)
-CP_BASE=236
-CP_SURFACE1=240
-CP_TEXT=253
-CP_MAUVE=183
-CP_RED=203
-CP_PEACH=209
-CP_YELLOW=221
-CP_GREEN=149
-CP_SAPPHIRE=110
-CP_BLUE=111
-CP_LAVENDER=146
-CP_TEAL=116
+GM_BG_DIM=233
+GM_BG0=235
+GM_BG3=237
+GM_FG0=223
+GM_RED=167
+GM_ORANGE=208
+GM_YELLOW=214
+GM_GREEN=142
+GM_AQUA=108
+GM_BLUE=109
+GM_PURPLE=175
+GM_GREY0=243
+GM_GREY2=246
 
 CURRENT_BG='NONE'
 
@@ -54,9 +54,9 @@ prompt_end() {
 ### Prompt components
 prompt_context() {
   if [[ -n "$SSH_CLIENT" ]]; then
-    prompt_segment $CP_MAUVE $CP_BASE "%{$fg_bold[$CP_BASE]%}$USER@%m%{$fg_no_bold[$CP_BASE]%}"
+    prompt_segment $GM_PURPLE $GM_BG_DIM "%{$fg_bold[$GM_BG_DIM]%}$USER@%m%{$fg_no_bold[$GM_BG_DIM]%}"
   else
-    prompt_segment $CP_LAVENDER $CP_BASE "%{$fg_bold[$CP_BASE]%}@$USER%{$fg_no_bold[$CP_BASE]%}"
+    prompt_segment $GM_AQUA $GM_BG_DIM "%{$fg_bold[$GM_BG_DIM]%}@$USER%{$fg_no_bold[$GM_BG_DIM]%}"
   fi
 }
 
@@ -77,13 +77,13 @@ prompt_git() {
     git_status=$(git status --porcelain 2> /dev/null)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     
-    bgclr=$CP_GREEN
-    fgclr=$CP_BASE
+    bgclr=$GM_GREEN
+    fgclr=$GM_BG_DIM
     clean=' ✔'
 
     if [[ -n $dirty ]]; then
       clean=''
-      bgclr=$CP_PEACH 
+      bgclr=$GM_ORANGE
     fi
 
     local current_commit_hash=$(git rev-parse HEAD 2> /dev/null)
@@ -96,13 +96,13 @@ prompt_git() {
     local number_modified=$(\grep -c "^.M" <<< "${git_status}")
     if [[ $number_modified -gt 0 ]]; then
       modified=" $number_modified●"
-      bgclr=$CP_RED 
+      bgclr=$GM_RED
     fi
 
     local number_deleted=$(\grep -c "^.D" <<< "${git_status}")
     if [[ $number_deleted -gt 0 ]]; then
       deleted=" $number_deleted‒"
-      bgclr=$CP_RED
+      bgclr=$GM_RED
     fi
 
     prompt_segment $bgclr $fgclr
@@ -111,29 +111,28 @@ prompt_git() {
 }
 
 prompt_dir() {
-  prompt_segment $CP_SAPPHIRE $CP_BASE "%{$fg_bold[$CP_BASE]%}%~%{$fg_no_bold[$CP_BASE]%}"
+  prompt_segment $GM_BLUE $GM_BG_DIM "%{$fg_bold[$GM_BG_DIM]%}%~%{$fg_no_bold[$GM_BG_DIM]%}"
 }
 
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path ]]; then
-    prompt_segment $CP_BLUE $CP_BASE "(`basename $virtualenv_path`)"
+    prompt_segment $GM_YELLOW $GM_BG_DIM "(`basename $virtualenv_path`)"
   fi
 }
 
-# Bagian Waktu dengan format: Fri 16 Jan - 14:25
 prompt_time() {
-  prompt_segment $CP_SURFACE1 $CP_TEXT "%D{%a %e %b - %H:%M}"
+  prompt_segment $GM_BG3 $GM_FG0 "%D{%a %e %b - %H:%M}"
 }
 
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{$CP_RED}%}$CROSS"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{$CP_YELLOW}%}$LIGHTNING"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{$CP_TEAL}%}$GEAR"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{$GM_RED}%}$CROSS"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{$GM_YELLOW}%}$LIGHTNING"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{$GM_AQUA}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $CP_BASE default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment $GM_BG_DIM default "$symbols"
 }
 
 ## Main prompt build
@@ -153,3 +152,48 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243"
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:*:*:*' menu select=1
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "ma=38;5;233;48;5;214"
+
+if (( ${+ZSH_HIGHLIGHT_STYLES} )); then
+  ZSH_HIGHLIGHT_STYLES[default]='none'
+  ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=167"
+  ZSH_HIGHLIGHT_STYLES[reserved-word]="fg=214,bold"
+  ZSH_HIGHLIGHT_STYLES[alias]="fg=#b8bb26,bold"
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=#b8bb26,bold"
+  ZSH_HIGHLIGHT_STYLES[builtin]="fg=214"
+  ZSH_HIGHLIGHT_STYLES[function]="fg=#b8bb26,bold"
+  ZSH_HIGHLIGHT_STYLES[command]="fg=#b8bb26,bold"
+  ZSH_HIGHLIGHT_STYLES[precommand]="fg=108,bold"
+  ZSH_HIGHLIGHT_STYLES[hashed-command]="fg=108"
+  ZSH_HIGHLIGHT_STYLES[path]="fg=223,underline"
+  ZSH_HIGHLIGHT_STYLES[path_prefix]="fg=223,underline"
+  ZSH_HIGHLIGHT_STYLES[globbing]="fg=175"
+  ZSH_HIGHLIGHT_STYLES[history-expansion]="fg=108"
+  ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=223"
+  ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=223"
+  ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=223"
+  ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]="fg=109"
+  ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]="fg=175"
+  ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]="fg=167"
+  ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]="fg=167"
+  ZSH_HIGHLIGHT_STYLES[assign]="fg=223"
+  ZSH_HIGHLIGHT_STYLES[comment]="fg=243"
+  ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=109"
+  ZSH_HIGHLIGHT_STYLES[cursor]="bg=223"
+  ZSH_HIGHLIGHT_STYLES[region]="bg=237,fg=223"
+  ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=109,bold"
+fi
+
+zle_highlight=(
+  region:bg=237,fg=223
+  special:fg=214,bold
+  suffix:fg=223,underline
+  isearch:bg=214,fg=233
+  paste:bg=237,fg=223
+)
