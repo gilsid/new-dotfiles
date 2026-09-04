@@ -18,9 +18,9 @@ hl.config({
             color        = "rgba(0a0a0aee)",
         },
         blur = {
-            enabled   = true,
-            size      = 20,
-            passes    = 3,
+            enabled   = false,
+            size      = 7,
+            passes    = 2,
             vibrancy  = 0.1696,
         },
     },
