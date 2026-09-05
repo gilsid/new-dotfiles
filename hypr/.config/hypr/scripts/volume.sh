@@ -8,13 +8,15 @@ sDIR="$HOME/.config/hypr/scripts"
 # mic : 󰍬 on  󰍭 muted
 
 get_volume() {
-    if [[ "$(pamixer --get-mute)" == "true" ]]; then
+    local _m
+    _m="$(pamixer --get-mute 2>/dev/null)" || _m=""
+    if [[ "$_m" == "true" ]]; then
         echo "Muted"
         return
     fi
 
     local volume
-    volume=$(pamixer --get-volume)
+    volume=$(pamixer --get-volume 2>/dev/null) || volume=0
     if [[ "$volume" -eq 0 ]]; then
         echo "Muted"
     else
@@ -23,12 +25,21 @@ get_volume() {
 }
 
 get_icon() {
-    if [[ "$(pamixer --get-mute)" == "true" ]]; then
+    # Arg opsional $1=muted $2=level biar pemanggil (notify_user) tidak
+    # spawn pamixer 2x lagi. Dipanggil tanpa arg (waybar) = query sendiri.
+    local _muted="${1:-}" _level="${2:-}"
+    if [ -z "$_muted" ]; then
+      _muted="$(pamixer --get-mute 2>/dev/null)" || _muted=""
+    fi
+    if [ "$_muted" = "true" ]; then
         echo "󰝟"
         return
     fi
 
-    current=$(pamixer --get-volume)
+    if [ -z "$_level" ]; then
+      _level="$(pamixer --get-volume 2>/dev/null)" || _level="0"
+    fi
+    local current="$_level"
     if [[ "$current" -le 30 ]]; then
         echo "󰕿"
     elif [[ "$current" -le 60 ]]; then
@@ -39,10 +50,11 @@ get_icon() {
 }
 
 notify_user() {
-    local muted="$(pamixer --get-mute)"
-    local level="$(pamixer --get-volume)"
-    local icon
-    icon="$(get_icon)"
+    local muted level icon
+    muted="$(pamixer --get-mute 2>/dev/null)" || muted=""
+    level="$(pamixer --get-volume 2>/dev/null)" || level=""
+    level="${level:-0}"
+    icon="$(get_icon "$muted" "$level")"
 
     if [[ "$muted" == "true" || "$level" -eq 0 ]]; then
         notify-send -e -h string:x-canonical-private-synchronous:volume_notif \
@@ -87,8 +99,10 @@ toggle_mic() {
 }
 
 get_mic_icon() {
-    local muted="$(pamixer --default-source --get-mute)"
-    local current="$(pamixer --default-source --get-volume)"
+    local muted current
+    muted="$(pamixer --default-source --get-mute 2>/dev/null)" || muted=""
+    current="$(pamixer --default-source --get-volume 2>/dev/null)" || current=""
+    current="${current:-0}"
     if [[ "$muted" == "true" || "$current" -eq "0" ]]; then
         echo "󰍭"
     else
@@ -112,9 +126,10 @@ get_mic_volume() {
 }
 
 notify_mic_user() {
-    local muted="$(pamixer --default-source --get-mute)"
-    local level="$(pamixer --default-source --get-volume)"
-    local icon
+    local muted level icon
+    muted="$(pamixer --default-source --get-mute 2>/dev/null)" || muted=""
+    level="$(pamixer --default-source --get-volume 2>/dev/null)" || level=""
+    level="${level:-0}"
 
     if [[ "$muted" == "true" || "$level" -eq 0 ]]; then
         icon="󰍭"

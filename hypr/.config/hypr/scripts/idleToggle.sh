@@ -3,7 +3,8 @@ set -eu
 # Toggle hypridle freeze/thaw. Eye icon: crossed = idle active, normal = idle off.
 # Off = kill -STOP (timer paused). On = restart hypridle (timers reset to 0).
 
-pid=$(pgrep -x hypridle | head -n1)
+pid=$(pgrep -x hypridle 2>/dev/null | head -n1) || pid=""
+pid="${pid:-}"
 
 idle_frozen() {
   [ -n "$pid" ] && [ "$(ps -o stat= -p "$pid" 2>/dev/null | cut -c1)" = "T" ]

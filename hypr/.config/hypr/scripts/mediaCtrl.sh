@@ -3,24 +3,29 @@ set -euo pipefail
 
 # Nerd icons: 󰎆 music, 󰐊 play, 󰏤 pause, 󰓛 stop
 
+if ! command -v playerctl >/dev/null 2>&1; then
+  notify-send -e -u low " 󰎆 Music" "playerctl not installed"
+  exit 0
+fi
+
 play_next() {
-  playerctl next
+  playerctl next 2>/dev/null || true
   show_music_notification
 }
 
 play_previous() {
-  playerctl previous
+  playerctl previous 2>/dev/null || true
   show_music_notification
 }
 
 toggle_play_pause() {
-  playerctl play-pause
+  playerctl play-pause 2>/dev/null || true
   sleep 0.1
   show_music_notification
 }
 
 stop_playback() {
-  playerctl stop
+  playerctl stop 2>/dev/null || true
   notify-send -e -u low " 󰓛 Playback" "Stopped"
 }
 

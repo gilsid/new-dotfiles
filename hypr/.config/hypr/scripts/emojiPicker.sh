@@ -5,6 +5,9 @@ set -euo pipefail
 
 rofi_theme="$HOME/.config/rofi/config-emoji.rasi"
 
+command -v rofi >/dev/null 2>&1 || { echo "emojiPicker: missing rofi" >&2; exit 1; }
+command -v wl-copy >/dev/null 2>&1 || { echo "emojiPicker: missing wl-copy" >&2; exit 1; }
+
 list='
 😀	Grinning Face · Wajah Tersenyum Lebar
 😁	Beaming Face · Senyum Gigi
@@ -243,12 +246,16 @@ list='
 🪩	Mirror Ball · Bola Disko
 '
 
-picked=$(echo "$list" | rofi -dmenu -i \
+picked=""
+rofi_status=0
+picked=$(printf '%s' "$list" | rofi -dmenu -i \
     -display-columns 1 \
     -display-column-separator '\t' \
-    -config "$rofi_theme" -p "Emoji")
+    -config "$rofi_theme" -p "Emoji") || rofi_status=$?
 
-[ -z "$picked" ] && exit 1
+if [ "$rofi_status" -ne 0 ] || [ -z "$picked" ]; then
+  exit 0
+fi
 
 emoji="${picked%%$'\t'*}"
-echo -n "$emoji" | wl-copy
+printf '%s' "$emoji" | wl-copy

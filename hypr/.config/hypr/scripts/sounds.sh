@@ -52,7 +52,13 @@ elif [ -d "$systemDIR/$theme" ]; then
     sDIR="$systemDIR/$theme"
 fi
 
-iTheme=$(cat "$sDIR/index.theme" | grep -i "inherits" | cut -d "=" -f 2)
+iTheme=""
+if [ -f "$sDIR/index.theme" ]; then
+  # grep exit 1 saat tidak ada baris Inherits + pipefail = assignment gagal,
+  # jadi harus ditahan || agar tidak abort via set -e.
+  iTheme=$(grep -i "inherits" "$sDIR/index.theme" | cut -d "=" -f 2) || iTheme=""
+fi
+iTheme="${iTheme:-$defaultTheme}"
 iDIR="$sDIR/../$iTheme"
 
 # Helper to play in the background (fast return).
@@ -78,13 +84,13 @@ if [[ -n "$directSound" && -f "$directSound" ]]; then
     play_sound "$directSound"
 fi
 
-sound_file=$(find -L $sDIR/stereo -name "$soundoption" -print -quit)
+sound_file=$(find -L "$sDIR/stereo" -name "$soundoption" -print -quit 2>/dev/null) || sound_file=""
 if ! test -f "$sound_file"; then
-    sound_file=$(find -L $iDIR/stereo -name "$soundoption" -print -quit)
+    sound_file=$(find -L "$iDIR/stereo" -name "$soundoption" -print -quit 2>/dev/null) || sound_file=""
     if ! test -f "$sound_file"; then
-        sound_file=$(find -L $userDIR/$defaultTheme/stereo -name "$soundoption" -print -quit)
+        sound_file=$(find -L "$userDIR/$defaultTheme/stereo" -name "$soundoption" -print -quit 2>/dev/null) || sound_file=""
         if ! test -f "$sound_file"; then
-            sound_file=$(find -L $systemDIR/$defaultTheme/stereo -name "$soundoption" -print -quit)
+            sound_file=$(find -L "$systemDIR/$defaultTheme/stereo" -name "$soundoption" -print -quit 2>/dev/null) || sound_file=""
             if ! test -f "$sound_file"; then
                 echo "Error: Sound file not found."
                 exit 1

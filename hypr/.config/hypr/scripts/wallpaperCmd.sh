@@ -82,7 +82,6 @@ wallpaper_resize_mode() {
   local image_path="$1"
   local monitor="${2:-}"
   local mode="${WALLPAPER_RESIZE_MODE:-auto}"
-  local mon_w mon_h img_w img_h
 
   mode="${mode,,}"
   case "$mode" in
@@ -97,21 +96,10 @@ wallpaper_resize_mode() {
       ;;
   esac
 
-  if ! read -r mon_w mon_h < <(wallpaper_monitor_dimensions "$monitor"); then
-    printf '%s\n' "crop"
-    return 0
-  fi
-  if ! read -r img_w img_h < <(wallpaper_image_dimensions "$image_path"); then
-    printf '%s\n' "crop"
-    return 0
-  fi
-
-  if [ "$img_w" -lt "$mon_w" ] || [ "$img_h" -lt "$mon_h" ]; then
-    printf '%s\n' "crop"
-    return 0
-  fi
-
-  # Auto mode prefers full-screen fill; set WALLPAPER_RESIZE_MODE=fit to preserve full image.
+  # Auto saat ini = full-screen fill (crop). Probes dimensi monitor/gambar
+  # sengaja dilewati: semua cabang di bawah juga menghasilkan crop,
+  # jadi spawn hyprctl+magick per monitor hanya buang ~50-100ms.
+  # Set WALLPAPER_RESIZE_MODE=fit untuk tampilkan gambar utuh.
   printf '%s\n' "crop"
 }
 export WWW_CMD WWW_DAEMON WWW_CACHE_DIR WWW_DAEMON_ARGS WWW_MIGRATION_MARKER

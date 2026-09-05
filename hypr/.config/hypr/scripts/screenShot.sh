@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-time=$(date "+%d-%b_%H-%M-%S")
+timestamp=$(date "+%d-%b_%H-%M-%S")
 PICTURES_DIR="$(xdg-user-dir PICTURES 2>/dev/null || echo "$HOME/Pictures")"
 dir="$PICTURES_DIR/Screenshots"
-file="Screenshot_${time}_${RANDOM}.png"
+file="Screenshot_${timestamp}_${RANDOM}.png"
 
 sDIR="$HOME/.config/hypr/scripts"
 
-active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
-active_window_file="Screenshot_${time}_${active_window_class}.png"
+active_window_class=$(hyprctl -j activewindow 2>/dev/null | jq -r '.class // empty' 2>/dev/null) || active_window_class=""
+active_window_class="${active_window_class:-unknown}"
+active_window_file="Screenshot_${timestamp}_${active_window_class}.png"
 active_window_path="${dir}/${active_window_file}"
 
 # Nerd icons: 󰹑 screenshot, 󰔟 timer, 󰀪 error
@@ -51,26 +52,29 @@ countdown() {
 }
 
 shotnow() {
-	cd ${dir} && grim - | tee "$file" | wl-copy
+	cd "$dir" && grim - | tee "$file" | wl-copy
 	notify_view
 }
 
 shot5() {
 	countdown '5'
-	sleep 1 && cd ${dir} && grim - | tee "$file" | wl-copy
+	sleep 1 && cd "$dir" && grim - | tee "$file" | wl-copy
 	notify_view
 }
 
 shot10() {
 	countdown '10'
-	sleep 1 && cd ${dir} && grim - | tee "$file" | wl-copy
+	sleep 1 && cd "$dir" && grim - | tee "$file" | wl-copy
 	notify_view
 }
 
 shotwin() {
-	w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
-	w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
-	cd ${dir} && grim -g "$w_pos $w_size" - | tee "$file" | wl-copy
+	w_geom=$(hyprctl -j activewindow 2>/dev/null | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' 2>/dev/null) || w_geom=""
+	if [ -z "$w_geom" ]; then
+		notify-send -u low " 󰀪 Screenshot" "No active window geometry"
+		return 1
+	fi
+	cd "$dir" && grim -g "$w_geom" - | tee "$file" | wl-copy
 	notify_view
 }
 
@@ -87,8 +91,8 @@ shotarea() {
 }
 
 shotactive() {
-    active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
-    active_window_file="Screenshot_${time}_${active_window_class}.png"
+    active_window_class=$(hyprctl -j activewindow 2>/dev/null | jq -r '.class // "unknown"' 2>/dev/null) || active_window_class="unknown"
+    active_window_file="Screenshot_${timestamp}_${active_window_class}.png"
     active_window_path="${dir}/${active_window_file}"
 
     hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "${active_window_path}"

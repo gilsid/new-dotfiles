@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 # Avoid duplicate agents (common with UWSM/session autostart)
-if pgrep -u "$UID" -f 'xfce-polkit|polkit-gnome-authentication-agent-1|polkit-kde-authentication-agent-1|polkit-mate-authentication-agent-1|mate-polkit|hyprpolkitagent' >/dev/null 2>&1; then
+_current_uid="${UID:-$(id -u)}"
+if pgrep -u "$_current_uid" -f 'xfce-polkit|polkit-gnome-authentication-agent-1|polkit-kde-authentication-agent-1|polkit-mate-authentication-agent-1|mate-polkit|hyprpolkitagent' >/dev/null 2>&1; then
   echo "Polkit agent already running. Skipping start."
   exit 0
 fi
@@ -45,15 +46,22 @@ polkit=(
 
 executed=false
 
+# NixOS / PATH fallback dulu: kalau agent ada di PATH (nix store, /usr/local),
+# pakai itu tanpa tergantung path FHS.
+for agent in hyprpolkitagent xfce-polkit polkit-gnome-authentication-agent-1 polkit-mate-authentication-agent-1; do
+  if command -v "$agent" >/dev/null 2>&1; then
+    echo "Found: $agent ($(command -v "$agent")) — executing..."
+    exec "$agent"
+  fi
+done
+
 for file in "${polkit[@]}"; do
   if [ -e "$file" ] && [ ! -d "$file" ]; then
     echo "Found: $file — executing..."
     exec "$file"
-    executed=true
-    break
   fi
 done
 
-if [ "$executed" == false ]; then
+if [ "$executed" = false ]; then
   echo "No valid Polkit agent found. Please install one."
 fi
