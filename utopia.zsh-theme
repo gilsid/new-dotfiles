@@ -184,10 +184,9 @@ if (( ${+ZSH_HIGHLIGHT_STYLES} )); then
   ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]="fg=167"
   ZSH_HIGHLIGHT_STYLES[assign]="fg=223"
   ZSH_HIGHLIGHT_STYLES[comment]="fg=243"
-  ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=109"
+  ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=223,underline"
   ZSH_HIGHLIGHT_STYLES[cursor]="bg=223"
   ZSH_HIGHLIGHT_STYLES[region]="bg=237,fg=223"
-  ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=109,bold"
 fi
 
 zle_highlight=(

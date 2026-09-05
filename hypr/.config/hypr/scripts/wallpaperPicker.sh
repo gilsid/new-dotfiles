@@ -21,7 +21,16 @@ rofi -dmenu -show-icons -p "Wallpaper"
 
 wall=$(find "$WALLDIR" -type f -name "$choice" | head -n1)
 
-awww img "$wall"
+pos=$(hyprctl cursorpos 2>/dev/null | tr -d ' ' || true)
+[ -z "$pos" ] && pos="center"
+
+awww img "$wall" \
+  --transition-type grow \
+  --transition-duration 0.8 \
+  --transition-fps 60 \
+  --transition-bezier .43,1.19,1,.4 \
+  --transition-pos "$pos" \
+  --invert-y
 
 WALLSTATE="$HOME/.config/hypr/wallpaper_effects"
 
