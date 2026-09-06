@@ -54,8 +54,7 @@ fi
 
 iTheme=""
 if [ -f "$sDIR/index.theme" ]; then
-  # grep exit 1 saat tidak ada baris Inherits + pipefail = assignment gagal,
-  # jadi harus ditahan || agar tidak abort via set -e.
+  # grep exits 1 on no match; with pipefail that fails the assignment, so catch it with ||.
   iTheme=$(grep -i "inherits" "$sDIR/index.theme" | cut -d "=" -f 2) || iTheme=""
 fi
 iTheme="${iTheme:-$defaultTheme}"

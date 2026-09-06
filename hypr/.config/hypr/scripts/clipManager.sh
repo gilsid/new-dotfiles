@@ -16,9 +16,9 @@ if pidof rofi > /dev/null 2>&1; then
   pkill rofi
 fi
 
-# NOTE: jangan pakai `cliphist list | grep -q .` di sini — dengan pipefail,
-# grep -q menutup pipe lebih awal, cliphist kena SIGPIPE (141) dan guard
-# salah mengira history kosong. $() tidak kena masalah itu.
+# NOTE: no `cliphist list | grep -q .` here — with pipefail, grep -q
+# closes the pipe early, cliphist dies on SIGPIPE (141), and the guard
+# misreads it as empty history. $() avoids that.
 if [ -z "$(cliphist list 2>/dev/null || true)" ]; then
   exit 0
 fi

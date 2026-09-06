@@ -1,4 +1,4 @@
-/* Emoji Picker — grid 5x5, warna ikut config.rasi (gruvbox material dark) */
+/* Emoji picker — 5x5 grid, colors follow config.rasi (gruvbox material dark) */
 
 @import "config.rasi"
 

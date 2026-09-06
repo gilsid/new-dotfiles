@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Emoji Picker — rofi grid (5 kolom) + wl-copy
-# Cari emoji pakai nama EN atau Indonesia
+# Emoji picker — rofi grid (5 columns) + wl-copy
+# Search emoji by English or Indonesian name
 
 rofi_theme="$HOME/.config/rofi/config-emoji.rasi"
 

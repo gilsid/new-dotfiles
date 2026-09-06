@@ -1,4 +1,4 @@
-/* Ganti baris @import untuk pindah warna (layout tetap) */
+/* Swap the @import line to change colors (layout stays) */
 
 @import "themes/gruvbox-material-dark.rasi"
 

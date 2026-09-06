@@ -96,10 +96,8 @@ wallpaper_resize_mode() {
       ;;
   esac
 
-  # Auto saat ini = full-screen fill (crop). Probes dimensi monitor/gambar
-  # sengaja dilewati: semua cabang di bawah juga menghasilkan crop,
-  # jadi spawn hyprctl+magick per monitor hanya buang ~50-100ms.
-  # Set WALLPAPER_RESIZE_MODE=fit untuk tampilkan gambar utuh.
+  # Auto is full-screen fill (crop); dimension probes skipped since every
+  # branch ends at crop anyway. Set WALLPAPER_RESIZE_MODE=fit to keep the full image.
   printf '%s\n' "crop"
 }
 export WWW_CMD WWW_DAEMON WWW_CACHE_DIR WWW_DAEMON_ARGS WWW_MIGRATION_MARKER

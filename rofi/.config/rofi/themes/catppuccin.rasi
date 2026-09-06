@@ -1,4 +1,4 @@
-/* Catppuccin Mocha palette — warna doang, layout di config.rasi */
+/* Catppuccin Mocha palette: colors only, layout lives in config.rasi */
 
 * {
     background:     #1E1E2EE6;

@@ -1,5 +1,5 @@
 # Gruvbox Material Dark — mirror waybar/colors/gruvbox-material.css + rofi/themes/gruvbox-material-dark.rasi
-# Ganti file ini untuk gonta-ganti warna. Di ../config tinggal ubah `include=` line.
+# Swap this file to change colors. In ../config just change the `include=` line.
 
 background-color=#282828F2
 text-color=#d4be98FF

@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- -- Fungsi untuk menyimpan nama tema ke file cache
 local function save_theme(theme_name)
   local path = vim.fn.stdpath("config") .. "/lua/config/theme_cache.lua"
   local file = io.open(path, "w")
@@ -35,25 +34,23 @@ vim.keymap.set("n", "<leader>th", function()
   })
 end, { desc = "Theme Switcher (Permanent)" })
 
--- Membuka terminal langsung di split kanan dengan penutupan otomatis
+-- Open a terminal in a right split that closes itself
 vim.keymap.set("n", "<leader>tr", function()
-  vim.cmd("vsplit") -- Buat split vertikal
-  vim.cmd("wincmd l") -- Pindah ke kanan
-  vim.cmd("term") -- Buka terminal
+  vim.cmd("vsplit")
+  vim.cmd("wincmd l")
+  vim.cmd("term")
 
-  -- Matikan nomor baris agar bersih
   vim.wo.number = false
   vim.wo.relativenumber = false
 
-  -- OTOMATIS TUTUP WINDOW SAAT TERMINAL EXIT
-  -- Begitu proses shell selesai, window akan ikut tertutup (bclose)
+  -- Auto-close the window when the shell exits
   local bufnr = vim.api.nvim_get_current_buf()
   vim.api.nvim_create_autocmd("TermClose", {
     buffer = bufnr,
     callback = function()
-      vim.cmd("bdelete!") -- Hapus buffer terminal dan tutup jendelanya
+      vim.cmd("bdelete!")
     end,
   })
 
-  vim.cmd("startinsert") -- Langsung mode mengetik
+  vim.cmd("startinsert")
 end, { desc = "Terminal di sebelah kanan (Auto-close)" })

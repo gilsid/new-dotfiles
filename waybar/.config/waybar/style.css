@@ -90,8 +90,8 @@ window#waybar {
     color: @bg0;
 }
 
-/* pill audio: group pegang background, isi (speaker + mic) transparan biar kelihatan satu pill.
-   note: selector group "group/audio" itu #audio, prefix "group/"-nya di-drop */
+/* audio pill: the group holds the background, speaker + mic stay transparent so it reads as one pill.
+   note: "group/audio" selects as #audio, the "group/" prefix is dropped */
 #audio {
     padding: 1px 10px;
     margin: 6px 0;
@@ -128,7 +128,7 @@ window#waybar {
     color: @grey2;
 }
 
-/* tray popup menu (nm-applet dll) — `all: unset` di atas membunuh styling default GTK, jadi ditimpa manual */
+/* tray popup menu (nm-applet etc): `all: unset` above kills default GTK styling, so override it here */
 menu {
     background-color: @bg0;
     color: @fg;

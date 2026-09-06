@@ -46,8 +46,7 @@ polkit=(
 
 executed=false
 
-# NixOS / PATH fallback dulu: kalau agent ada di PATH (nix store, /usr/local),
-# pakai itu tanpa tergantung path FHS.
+# PATH fallback first (NixOS, nix store): prefer an agent found in PATH over hardcoded paths.
 for agent in hyprpolkitagent xfce-polkit polkit-gnome-authentication-agent-1 polkit-mate-authentication-agent-1; do
   if command -v "$agent" >/dev/null 2>&1; then
     echo "Found: $agent ($(command -v "$agent")) — executing..."

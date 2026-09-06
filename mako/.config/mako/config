@@ -1,9 +1,9 @@
-# mako config — gruvbox-material, rounded tipis (8-10px), layout konsisten dengan waybar/rofi
-# colors di-load dari themes/ biar gampang gonta-ganti: cukup ubah `include=` di bawah
+# mako config: gruvbox-material, slim rounding (8-10px), layout matches waybar/rofi
+# colors load from themes/ for easy swaps: just change `include=` below
 # docs: man 5 mako
 
 # ── theme ──────────────────────────────────────────────────────────
-# ganti ke themes/catppuccin dll untuk switch theme
+# point at another themes/ file to switch theme
 include=~/.config/mako/themes/gruvbox-material
 
 # ── layout & behaviour ─────────────────────────────────────────────
@@ -34,7 +34,7 @@ group-by=
 text-alignment=left
 format=<b>%s</b>\n%b
 
-# progress bar (volume/brightness) — script pakai hint `value: 0-100`
+# progress bar (volume/brightness): scripts use the `value: 0-100` hint
 progress-color=over #7daea3FF
 
 # ── bindings — simple dismiss (screenshot no action) ───────────────
@@ -48,14 +48,14 @@ on-touch=dismiss
 [mode=do-not-disturb]
 invisible=1
 
-# ── grouping — angka di kanan biar title gak geser ─────────────────
+# ── grouping: count on the right so titles do not shift ──
 [grouped]
 format=<b>%s</b> <span alpha="60">(%g)</span>\n%b
 
 [group-index=0]
 format=<b>%s</b> <span alpha="60">(%g)</span>\n%b
 
-# placeholder kalau >max-visible (5) — center biar simetris
+# placeholder past max-visible (5): centered for symmetry
 [hidden]
 format=<span alpha="70">— %h more —</span>
 text-alignment=center

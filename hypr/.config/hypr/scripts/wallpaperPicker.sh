@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# NOTE: bash disengaja — pakai printf \x00 (protokol ikon rofi) + process substitution,
-# yang tidak portable di dash/POSIX sh.
+# NOTE: bash on purpose — printf \x00 (rofi icon protocol) + process
+# substitution are not portable to dash/POSIX sh.
 
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 # shellcheck source=/dev/null
@@ -15,9 +15,9 @@ command -v "$WWW_CMD" >/dev/null 2>&1 || { echo "wallpaperPicker: missing $WWW_C
 [ -d "$WALLDIR" ] || { echo "wallpaperPicker: $WALLDIR not found" >&2; exit 1; }
 
 choice=""
-# NOTE: input via < <(...) (bukan pipe) supaya status $? = status rofi saja.
-# Kalau pakai `find | while read ... | rofi` + pipefail, `read` yang kena EOF
-# selalu exit 1 dan meracuni status pipeline walau rofi sukses.
+# NOTE: feed via < <(...) (not a pipe) so $? is rofi's status alone.
+# With `find | while read ... | rofi` + pipefail, the `read` hitting EOF
+# exits 1 and poisons the pipeline even when rofi succeeds.
 choice=$(rofi -dmenu -show-icons -p "Wallpaper" < <(
 find "$WALLDIR" -type f \( \
     -iname "*.jpg" -o \
@@ -33,8 +33,8 @@ done
 
 [ -z "$choice" ] && exit 0
 
-# Resolve basename -> full path dengan perbandingan literal (aman dari glob injection,
-# benar saat dua subfolder punya nama file sama: ambil yang pertama).
+# Resolve basename -> full path with literal comparison (safe from glob
+# injection; first match wins when two subfolders share a filename).
 wall=""
 while IFS= read -r img; do
   if [ "$(basename "$img")" = "$choice" ]; then
@@ -61,7 +61,7 @@ if [ "$WWW_CMD" = "awww" ]; then
     --transition-pos "$pos" \
     --invert-y
 else
-  # swww tidak punya --invert-y (itu flag awww), jadi cabangnya tanpa itu.
+  # swww has no --invert-y (awww-only flag), so this branch omits it.
   "$WWW_CMD" img --transition-type grow \
     --transition-duration 0.8 \
     --transition-fps 60 \

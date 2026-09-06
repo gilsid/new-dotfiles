@@ -25,8 +25,7 @@ get_volume() {
 }
 
 get_icon() {
-    # Arg opsional $1=muted $2=level biar pemanggil (notify_user) tidak
-    # spawn pamixer 2x lagi. Dipanggil tanpa arg (waybar) = query sendiri.
+    # Optional $1=muted $2=level so the caller skips extra pamixer spawns. No args (waybar) queries directly.
     local _muted="${1:-}" _level="${2:-}"
     if [ -z "$_muted" ]; then
       _muted="$(pamixer --get-mute 2>/dev/null)" || _muted=""

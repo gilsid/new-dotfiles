@@ -78,8 +78,7 @@ apply_wallpaper_for_monitor() {
     fi
   fi
 
-# Set wallpaper per monitor. Flag target beda per backend:
-# awww pakai -o, swww pakai --outputs (swww tidak kenal -o).
+# Backend flags differ: awww takes -o, swww takes --outputs.
 wallpaper_set_for_monitor() {
   local monitor="$1" resize_mode="$2" wallpaper_path="$3"
   if [ "$WWW_CMD" = "awww" ]; then

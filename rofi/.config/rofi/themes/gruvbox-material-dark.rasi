@@ -1,4 +1,4 @@
-/* Gruvbox Material Dark (palette: material, background: medium) — source of truth warna */
+/* Gruvbox Material Dark (palette: material, background: medium) — color source of truth */
 
 * {
     background:     #282828E6;
