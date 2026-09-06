@@ -1,8 +1,26 @@
+-- Border colors from matugen (per wallpaper); missing on first boot.
+local function matugen_borders()
+    local f = io.open(os.getenv("HOME") .. "/.cache/matugen/hyprland-borders.sh", "r")
+    if not f then return nil end
+    local vals = {}
+    for line in f:lines() do
+        local k, v = line:match("^# ([A-Z0-9_]+)=([0-9A-Fa-f]+)$")
+        if k then vals[k] = v end
+    end
+    f:close()
+    if not (vals.ACTIVE1 and vals.ACTIVE2 and vals.INACTIVE) then return nil end
+    return {
+        active_border = { colors = { "rgba(" .. vals.ACTIVE1 .. ")", "rgba(" .. vals.ACTIVE2 .. ")" }, angle = tonumber(vals.ANGLE) or 45 },
+        inactive_border = "rgba(" .. vals.INACTIVE .. ")",
+    }
+end
+
 hl.config({
     general = {
         gaps_in  = 3,
         gaps_out = 8,
         border_size = 1,
+        col = matugen_borders(),
         resize_on_border = false,
         allow_tearing = false,
     },
@@ -25,17 +43,6 @@ hl.config({
         },
     },
 })
--- Re-apply matugen cache on login and reload (cache survives reboot).
--- eval can fail while Hyprland is still starting, so re-apply once late.
-local function apply_matugen_borders()
-    local cache = os.getenv("HOME") .. "/.cache/matugen/hyprland-borders.sh"
-    hl.exec_cmd("[ -f '" .. cache .. "' ] && bash '" .. cache .. "'")
-end
-hl.on("hyprland.start", function()
-    apply_matugen_borders()
-    hl.timer(apply_matugen_borders, { timeout = 15000, type = "oneshot" })
-end)
-hl.on("config.reloaded", apply_matugen_borders)
 
 
 -- Animation
