@@ -1,24 +1,34 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 3,
+    // "height": 30, // kept commented: auto height, Pipshag technique avoids rounding gaps
+    "spacing": 0,
     "fixed-center": true,
     "ipc": true,
     "margin-top": 3,
     "margin-left": 8,
     "margin-right": 8,
-
+    // powerline exp — left: clock -> tray (teal); center: workspaces (cream); right: backlight (brown) -> audio (teal) -> battery (green) -> idle
+    // arrows use    , battery green
     "modules-left": [
+        "clock",
+        "custom/arrow1",
         "tray",
-        "clock"
+        "custom/arrow2"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "custom/arrow4",
+        "hyprland/workspaces",
+        "custom/arrow5"
     ],
     "modules-right": [
+        "custom/arrow6",
         "backlight",
+        "custom/arrow7",
         "group/audio",
+        "custom/arrow3",
         "battery",
+        "custom/arrow8",
         "custom/idle"
     ],
 
@@ -124,5 +134,40 @@
         "return-type": "json",
         "signal": 10,
         "interval": "once"
+    },
+
+    // === arrows — pure text, not scripts ===
+    // left:   right:   center:  
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
     }
 }
