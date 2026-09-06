@@ -25,10 +25,17 @@ hl.config({
         },
     },
 })
--- Re-apply matugen cache
-hl.on("config.reloaded", function()
-    hl.exec_cmd("bash " .. os.getenv("HOME") .. "/.cache/matugen/hyprland-borders.sh")
+-- Re-apply matugen cache on login and reload (cache survives reboot).
+-- eval can fail while Hyprland is still starting, so re-apply once late.
+local function apply_matugen_borders()
+    local cache = os.getenv("HOME") .. "/.cache/matugen/hyprland-borders.sh"
+    hl.exec_cmd("[ -f '" .. cache .. "' ] && bash '" .. cache .. "'")
+end
+hl.on("hyprland.start", function()
+    apply_matugen_borders()
+    hl.timer(apply_matugen_borders, { timeout = 15000, type = "oneshot" })
 end)
+hl.on("config.reloaded", apply_matugen_borders)
 
 
 -- Animation

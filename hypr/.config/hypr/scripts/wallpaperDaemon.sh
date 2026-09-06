@@ -10,11 +10,11 @@ if command -v "$WWW_DAEMON" >/dev/null 2>&1 && command -v "$WWW_CMD" >/dev/null 
   "$WWW_DAEMON" "${WWW_DAEMON_ARGS[@]}" &
 fi
 
-# Give the daemon a moment to become ready
+# Never abort here: borders below must not depend on the daemon.
 for _ in {1..50}; do
   "$WWW_CMD" query >/dev/null 2>&1 && break
   sleep 0.1
-done
+done || true
 
 wallpaper_link="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 
@@ -99,14 +99,36 @@ wallpaper_set_for_monitor() {
   fi
 }
 
+# Wait only for wallpaper jobs — never bare `wait`: the daemon above
+# is our child too and never exits, so bare wait hangs here forever.
+monitor_pids=()
 while read -r monitor; do
   [ -n "$monitor" ] || continue
   apply_wallpaper_for_monitor "$monitor" &
+  monitor_pids+=($!)
 done < <(get_monitors)
-wait
+if ((${#monitor_pids[@]} > 0)); then
+  wait "${monitor_pids[@]}" || true
+fi
 
-# Update border colors from current wallpaper
+# post_hook can fail silently at startup, so re-apply until set.
+apply_matugen_borders() {
+  local cache_file="$HOME/.cache/matugen/hyprland-borders.sh"
+  local attempt
+  for attempt in 1 2 3 4 5 6 7 8; do
+    [ -f "$cache_file" ] && bash "$cache_file" >/dev/null 2>&1
+    if hyprctl getoption general:col.active_border 2>/dev/null | grep -q 'set: true'; then
+      return 0
+    fi
+    sleep 2
+  done
+  return 1
+}
+
 if command -v matugen >/dev/null 2>&1 && [ -L "$wallpaper_link" ]; then
   resolved_wall="$(readlink -f "$wallpaper_link" 2>/dev/null)" || resolved_wall=""
-  [ -n "$resolved_wall" ] && [ -f "$resolved_wall" ] && matugen image "$resolved_wall" --mode dark &
+  if [ -n "$resolved_wall" ] && [ -f "$resolved_wall" ]; then
+    matugen image "$resolved_wall" --mode dark >/dev/null 2>&1 || true
+    apply_matugen_borders || true
+  fi
 fi
