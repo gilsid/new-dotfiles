@@ -101,7 +101,7 @@ hl.window_rule({ name = "media-no-blur", match = { tag = "multimedia" }, no_blur
 hl.window_rule({ name = "media-opacity", match = { tag = "multimedia" }, opacity = 1.0 })
 
 -- Browser opacity
-hl.window_rule({ name = "opacity-browser", match = { tag = "browser" }, opacity = 0.99 })
+-- hl.window_rule({ name = "opacity-browser", match = { tag = "browser" }, opacity = 0.99 })
 
 -- Idle inhibit for fullscreen
 hl.window_rule({ name = "idle-inhibit", match = { fullscreen = true }, idle_inhibit = "fullscreen" })
