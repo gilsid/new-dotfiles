@@ -14,7 +14,7 @@ state() {
   if idle_frozen; then
     printf '{"text":"","class":"off","tooltip":"Idle: disabled \\n Screen stays on"}\n'
   else
-    printf '{"text":"","class":"on","tooltip":"Idle: active \\n Lock 5m / screen off 5.5m / suspend 15m"}\n'
+    printf '{"text":"","class":"on","tooltip":"Idle: active \\n Lock 5m / screen off 7m / suspend 15m"}\n'
   fi
 }
 
