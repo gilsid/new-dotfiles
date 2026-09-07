@@ -8,9 +8,9 @@
        :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
        :desc "Toggle markdown-view-mode"      "m" #'cstm/toggle-markdown-view
-       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines
+       :desc "Toggle shell command"           "s" #'shell-command))
        ;; :desc "Toggle treemacs"                "T" #'+treemacs/toggle
-       ;; :desc "Toggle vterm split"             "v" #'+vterm/toggle))
 
 (map! :leader
       (:prefix ("o" . "open here")
