@@ -28,25 +28,25 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# Buat Alias untuk shortcut
+# Aliases
 alias up='paru -Syu'
 alias vim='nvim'
 alias v='nvim'
 alias s='paru -Ss'
 # Alias for RTK Antigravity
 alias ag='rtk init --agent antigravity'
-# Alias for opencode YOLO 
+# Alias for opencode YOLO
 alias oc='opencode --yolo'
 
 # VI MODE
 bindkey -v
-# FZF — guard biar tidak error jika fzf belum install, eval lebih portabel dari source <(...)
+# FZF: guard so nothing breaks without fzf; eval beats source <(...) for portability
 if command -v fzf >/dev/null 2>&1; then
 	eval "$(fzf --zsh)"
 fi
 fzf-files() {
 	local file
-	# fallback ke find jika fd tidak ada, bat optional
+	# fall back to find without fd; bat optional
 	if command -v fd >/dev/null 2>&1; then
 		file=$(fd -H -t f . 2>/dev/null | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
 	else
@@ -58,11 +58,11 @@ zle -N fzf-files
 # INSERT MODE (viins)
 bindkey -M viins '^F' fzf-files
 bindkey -M viins '^R' fzf-history-widget
-# NORMAL MODE (optional tapi enak)
+# NORMAL MODE (optional)
 bindkey -M vicmd '^F' fzf-files
 bindkey -M vicmd '^R' fzf-history-widget
 
-# Alias untuk mount Linux mint
+# Mount aliases (Mint / Void partitions)
 alias mount-mint='udisksctl mount -b /dev/sda5'
 alias unmount-mint='udisksctl unmount -b /dev/sda5'
 alias mount-void='udisksctl mount -b /dev/sda3'
@@ -87,11 +87,11 @@ yt() {
 	fi
 }
 
-# Set Neovim sebagai default editor (sudo 1.9+ pakai EDITOR, SUDO_EDITOR deprecated)
+# Neovim as default editor (sudo 1.9+ reads EDITOR, SUDO_EDITOR is deprecated)
 export EDITOR=nvim
 export VISUAL=nvim
 
-# PATH — deduplicate, biar tidak dobel tiap source ~/.zshrc
+# PATH: deduplicate so re-sourcing .zshrc does not stack entries
 typeset -U path PATH
 path=(
 	"$HOME/.local/bin"
@@ -103,8 +103,8 @@ path=(
 	$path
 )
 export PATH
-# NODE_PATH => KHUSUS untuk Claude/agent (skill /docx), bukan untuk dipakai manual.
-# Paket npm ke-install di ~/.npm-global/lib/node_modules.
+# NODE_PATH is ONLY for Claude/agents (the /docx skill), not for manual use.
+# npm packages install to ~/.npm-global/lib/node_modules.
 export NODE_PATH="$HOME/.npm-global/lib/node_modules"
 # NOTE
 echo "Boot.dev sudah sampai chapter 9 : Lists Level 1"
