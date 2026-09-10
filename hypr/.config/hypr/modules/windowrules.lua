@@ -87,6 +87,14 @@ hl.window_rule({
 	center = true,
 })
 
+hl.window_rule({
+	name = "float-btop",
+	match = { class = "^(btop)$" },
+	float = true,
+	center = true,
+	size = { 900, 620 },
+})
+
 -- Picture-in-Picture
 hl.window_rule({
 	name = "PiP",
