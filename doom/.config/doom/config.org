@@ -5,6 +5,7 @@
 - [[#keybindings][Keybindings]]
   - [[#toggle][Toggle]]
   - [[#open][Open]]
+  - [[#open-url-with-gx][Open URL with gx]]
 - [[#markdown][Markdown]]
   - [[#headers][Headers]]
   - [[#toggle-markdown-view][Toggle Markdown View]]
@@ -20,12 +21,15 @@
 - [[#jsonc-mode][JSONC Mode]]
 
 * Doom Settings
+Theme and font.
+
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-gruvbox)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 10.0))
 #+end_src
 
 * Keybindings
+Leader keys and custom shortcuts.
 
 ** Toggle
 #+begin_src emacs-lisp
@@ -49,9 +53,22 @@
        :desc "Open ghostel here"   "v" #'ghostel))
 #+end_src
 
+** Open URL with gx
+Open the URL/link at point with ~gx~, like in LazyVim.  This overrides Doom's default ~gx~ (~evil-exchange~).  In Org buffers this calls ~org-open-at-point~ so Org links work, otherwise it calls ~browse-url-at-point~.
+
+#+begin_src emacs-lisp
+(defun cstm/open-url-at-point ()
+  "Open URL/link at point, like LazyVim gx."
+  (interactive)
+  (if (derived-mode-p 'org-mode)
+      (call-interactively #'org-open-at-point)
+    (call-interactively #'browse-url-at-point)))
+
+(map! :nv "gx" #'cstm/open-url-at-point)
+#+end_src
+
 * Markdown
 This sets the font size for each markdown header level.  Having variable font sizes in a markdown outline makes it visually appealing and more readable.
-
 
 ** Headers
 #+begin_src emacs-lisp
@@ -63,7 +80,6 @@ This sets the font size for each markdown header level.  Having variable font si
  '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.3))))
  '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.2))))
  '(markdown-header-face-6 ((t (:inherit markdown-header-face :height 1.1)))))
-
 #+end_src
 
 ** Toggle Markdown View
@@ -74,24 +90,24 @@ A custom function to toggle between standard 'markdown-mode' and 'markdown-view-
   "Toggle between `markdown-mode' and `markdown-view-mode'."
   (interactive)
   (if (eq major-mode 'markdown-view-mode)
-      (markdown-mode)
-    (markdown-view-mode)))
-
+       (markdown-mode)
+     (markdown-view-mode)))
 #+end_src
 
 * Org
+Org directory and display tweaks.
+
 ** Basic Settings
 #+begin_src emacs-lisp
-
 (setq org-directory "~/org/")
 (setq org-modern-table-vertical 1)
 (setq org-modern-table t)
 (add-hook 'org-mode-hook #'hl-todo-mode)
-
 #+end_src
 
 ** Headers
 This sets the font size for each Org header level.  Having variable font sizes in an Org outline makes it visually appealing and more readable.
+
 #+begin_src emacs-lisp
 (custom-theme-set-faces!
 'doom-gruvbox
@@ -104,10 +120,11 @@ This sets the font size for each Org header level.  Having variable font sizes i
 '(org-level-2 :inherit outline-2 :height 1.5)
 '(org-level-1 :inherit outline-1 :height 1.6)
 '(org-document-title  :height 1.8 :bold t :underline nil))
-
 #+end_src
 
 * Sensible Defaults
+Base defaults I want everywhere.
+
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode) ;; Set display line numbers to relative
@@ -142,6 +159,7 @@ This sets the font size for each Org header level.  Having variable font sizes i
 #+end_src
 
 * Ghostel
+Ghostel terminal setup with Evil keys.
 
 #+begin_src emacs-lisp
 (use-package! ghostel
@@ -160,6 +178,7 @@ This sets the font size for each Org header level.  Having variable font sizes i
 #+end_src
 
 * AI Tools
+Opencode and Claude Code setup.
 
 ** Opencode
 #+begin_src emacs-lisp
@@ -196,9 +215,10 @@ This sets the font size for each Org header level.  Having variable font sizes i
 #+end_src
 
 * JSONC Mode
+Open .jsonc files with jsonc-mode.
+
 #+begin_src emacs-lisp
 (after! jsonc-mode
   (add-to-list 'auto-mode-alist
-               '("\\.jsonc\\'" . jsonc-mode)))
-
+                '("\\.jsonc\\'" . jsonc-mode)))
 #+end_src

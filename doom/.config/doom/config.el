@@ -17,6 +17,15 @@
        ;; :desc "Open eshell here"    "e" #'+eshell/here
        :desc "Open ghostel here"   "v" #'ghostel))
 
+(defun cstm/open-url-at-point ()
+  "Open URL/link at point, like LazyVim gx."
+  (interactive)
+  (if (derived-mode-p 'org-mode)
+      (call-interactively #'org-open-at-point)
+    (call-interactively #'browse-url-at-point)))
+
+(map! :nv "gx" #'cstm/open-url-at-point)
+
 (custom-set-faces
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
  '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.6))))
@@ -30,8 +39,8 @@
   "Toggle between `markdown-mode' and `markdown-view-mode'."
   (interactive)
   (if (eq major-mode 'markdown-view-mode)
-      (markdown-mode)
-    (markdown-view-mode)))
+       (markdown-mode)
+     (markdown-view-mode)))
 
 (setq org-directory "~/org/")
 (setq org-modern-table-vertical 1)
@@ -122,4 +131,4 @@
 
 (after! jsonc-mode
   (add-to-list 'auto-mode-alist
-               '("\\.jsonc\\'" . jsonc-mode)))
+                '("\\.jsonc\\'" . jsonc-mode)))
