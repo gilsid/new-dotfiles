@@ -18,7 +18,7 @@ configuration {
     display-window:           "󰖯 Windows";
     disable-history:          false;
     location:                 0;
-    terminal:                 "alacritty";
+    terminal:                 "foot";
     font:                     "JetBrainsMono Nerd Font SemiBold 13";
 }
 
