@@ -132,3 +132,11 @@
 (after! jsonc-mode
   (add-to-list 'auto-mode-alist
                 '("\\.jsonc\\'" . jsonc-mode)))
+
+(with-eval-after-load 'corfu-auto
+  (setq corfu-auto t
+        corfu-auto-prefix 1
+        corfu-auto-delay 0.0))
+
+(set-eglot-client! '(python-mode python-ts-mode)
+  '("ty" "server"))

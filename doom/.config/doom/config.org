@@ -19,6 +19,9 @@
   - [[#opencode][Opencode]]
   - [[#claude-code][Claude Code]]
 - [[#jsonc-mode][JSONC Mode]]
+- [[#lsp][LSP]]
+  - [[#completion][Completion]]
+  - [[#python][Python]]
 
 * Doom Settings
 Theme and font.
@@ -221,4 +224,27 @@ Open .jsonc files with jsonc-mode.
 (after! jsonc-mode
   (add-to-list 'auto-mode-alist
                 '("\\.jsonc\\'" . jsonc-mode)))
+#+end_src
+
+* LSP
+Eglot and per-language servers.
+
+** Completion
+Popup like Neovim, from the first character.
+
+#+begin_src emacs-lisp
+(with-eval-after-load 'corfu-auto
+  (setq corfu-auto t
+        corfu-auto-prefix 1
+        corfu-auto-delay 0.0))
+#+end_src
+
+Prefix 1 pops up on every keystroke and talks to the LSP more. Raise ~corfu-auto-delay~ to ~0.1~ if it gets noisy.
+
+** Python
+Python LSP via Ty. Without this Eglot grabs the first server on ~$PATH~.
+
+#+begin_src emacs-lisp
+(set-eglot-client! '(python-mode python-ts-mode)
+  '("ty" "server"))
 #+end_src
