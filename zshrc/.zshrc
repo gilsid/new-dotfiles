@@ -120,3 +120,14 @@ function y() {
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# bun completions
+[ -s "/home/utopia/.bun/_bun" ] && source "/home/utopia/.bun/_bun"
+
+# Vite+ bin (https://viteplus.dev)
+. "/home/utopia/.config/vite-plus/env"
+
+# mise
+if command -v mise >/dev/null 2>&1; then
+	eval "$(mise activate zsh)"
+fi
