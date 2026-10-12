@@ -35,7 +35,7 @@ for _, b in ipairs(browsers) do
 end
 
 -- Code tagg
-hl.window_rule({ name = "tag-code", match = { class = "^(antigravity|antigravity-ide|code|t3code|)$" }, tag = "+code" })
+hl.window_rule({ name = "tag-code", match = { class = "^(antigravity|antigravity-ide|[Cc]ode|[Tt]3[Cc]ode|com\\.t3tools\\.T3Code)$" }, tag = "+code" })
 
 -- Terminal tag
 hl.window_rule({
