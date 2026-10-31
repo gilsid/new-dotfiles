@@ -73,6 +73,7 @@ SAVEHIST=10000
 setopt appendhistory
 setopt correct
 setopt AUTO_CD
+unsetopt LIST_BEEP
 
 # yt-dlp
 yt() {
