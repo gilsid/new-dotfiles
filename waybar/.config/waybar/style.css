@@ -126,6 +126,12 @@ window#waybar {
     color: @red;
 }
 
+#workspaces button:hover {
+    background: transparent;
+    color: @bg0;
+    box-shadow: inset 0 0 0 100px rgba(69, 64, 61, 0.30);
+}
+
 /* ARROWS: one glyph family (E0B0/E0B2), one whole-px size.
  * If a 1px seam returns, nudge slowly (21px or 23px) and shift the base
  * font-size in window#waybar by 1px too, so the 2x ratio still holds. */
